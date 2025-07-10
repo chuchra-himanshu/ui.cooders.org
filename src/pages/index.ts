@@ -1,8 +1,8 @@
 import Dashboard from "./Dashboard";
 import MaterialUI from "./MaterialUI";
 import ShadCN from "./ShadCN";
-import ReactPrime from "./ReactPrime";
+import PrimeReact from "./PrimeReact";
 import Builder from "./Builder";
 import Settings from "./Settings";
 
-export { Dashboard, MaterialUI, ShadCN, ReactPrime, Builder, Settings };
+export { Dashboard, MaterialUI, ShadCN, PrimeReact, Builder, Settings };

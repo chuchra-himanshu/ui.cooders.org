@@ -5,7 +5,7 @@ import {
   Builder,
   Dashboard,
   MaterialUI,
-  ReactPrime,
+  PrimeReact,
   Settings,
   ShadCN,
 } from "./pages";
@@ -15,10 +15,10 @@ const Router: React.FC = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" Component={StudioLayout}>
-          <Route path="dashboard" Component={Dashboard} />
+          <Route path="" Component={Dashboard} />
           <Route path="mui" Component={MaterialUI} />
           <Route path="shadcn" Component={ShadCN} />
-          <Route path="react-prime" Component={ReactPrime} />
+          <Route path="prime-react" Component={PrimeReact} />
           <Route path="builder" Component={Builder} />
           <Route path="settings" Component={Settings} />
         </Route>
