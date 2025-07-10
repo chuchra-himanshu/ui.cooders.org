@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+@theme {
+  --color-background-primary: #101010;
+  --color-border-primary: #404040;
+  --color-accent: #4184f3;
+  --color-text-primary: #efefef;
+}
+
+* {
+    font-family: "Inter";
+}
