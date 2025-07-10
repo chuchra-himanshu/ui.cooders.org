@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const polygons = [
-  { points: "45,11 36,11 35.5,1", opacity: 0.7 },
-  { points: "35.5,1 25.4,14.1 39,21", opacity: 1 },
-  { points: "17,9.8 39,21 17,26", opacity: 0.4 },
-  { points: "2,12 17,26 17,9.8", opacity: 0.7 },
-  { points: "17,26 39,21 28,36", opacity: 0.7 },
-  { points: "28,36 4.5,44 17,26", opacity: 1 },
-  { points: "17,26 1,26 10.8,20.1", opacity: 1 },
+const blocks = [
+  { points: "0,10 10,0 20,10 10,20", opacity: 1 },
+  { points: "22,10 32,0 42,10 32,20", opacity: 0.7 },
+  { points: "44,10 54,0 64,10 54,20", opacity: 0.4 },
+  { points: "11,22 21,12 31,22 21,32", opacity: 0.6 },
+  { points: "33,22 43,12 53,22 43,32", opacity: 0.8 },
+  { points: "22,34 32,24 42,34 32,44", opacity: 1 },
 ];
 
 const Logo: React.FC = () => {
@@ -22,16 +21,16 @@ const Logo: React.FC = () => {
 
   return (
     <motion.svg
-      className="w-[48px] h-[48px] fill-accent cursor-pointer z-50"
+      className="w-[75px] h-[75px] fill-accent cursor-pointer rotate-180 -mt-1"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 46 46"
+      viewBox="0 0 66 48"
       onClick={handleClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       animate={
         hovered
           ? {
-              scale: [1, 1.1, 1],
+              scale: [1, 1.05, 1],
               transition: {
                 duration: 0.6,
                 repeat: Infinity,
@@ -41,27 +40,27 @@ const Logo: React.FC = () => {
           : { scale: 1 }
       }
     >
-      {polygons.map((polygon, index) => (
+      {blocks.map((block, index) => (
         <motion.polygon
           key={index}
-          points={polygon.points}
-          opacity={polygon.opacity}
+          points={block.points}
+          opacity={block.opacity}
           initial={{ x: 0, y: 0, rotate: 0, scale: 1 }}
           animate={
             scattered
               ? {
-                  x: (Math.random() - 0.5) * 25,
-                  y: (Math.random() - 0.5) * 25,
-                  rotate: (Math.random() - 0.5) * 20,
+                  x: (Math.random() - 0.5) * 20,
+                  y: (Math.random() - 0.5) * 20,
+                  rotate: (Math.random() - 0.5) * 25,
                   scale: 1.1,
-                  transition: { duration: 0.15, ease: "easeOut" },
+                  transition: { duration: 0.2 },
                 }
               : {
                   x: 0,
                   y: 0,
                   rotate: 0,
                   scale: 1,
-                  transition: { duration: 0.2, ease: "easeOut" },
+                  transition: { duration: 0.3 },
                 }
           }
         />
