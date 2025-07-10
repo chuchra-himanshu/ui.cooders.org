@@ -9,7 +9,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
   const baseClasses =
     "flex items-center h-[50px] transition-colors cursor-pointer px-[13.5px]";
   const textClasses =
-    "text-[18px] font-medium ml-3 max-w-0 lg:max-w-[200px] overflow-hidden opacity-0 lg:opacity-100 transition-[max-width,opacity] duration-300 ease-in-out whitespace-nowrap";
+    "text-[18px] font-medium ml-3 :max-w-[200px] overflow-hidden opacity-100 transition-[max-width,opacity] duration-300 ease-in-out whitespace-nowrap";
   const iconClasses = `h-[22px] w-[22px] shrink-0 ${
     isSelected ? "text-accent" : ""
   }`;

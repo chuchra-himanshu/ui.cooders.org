@@ -4,7 +4,7 @@ import { PiBellRingingFill } from "react-icons/pi";
 
 const Header: React.FC = () => {
   return (
-    <header className="h-[72px] border-b border-b-border-primary flex items-center justify-between px-5">
+    <header className="h-[80px] border-b border-b-border-primary flex items-center justify-between px-5">
       <Logo />
       <section className="flex items-center gap-2">
         <IconButton

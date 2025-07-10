@@ -22,7 +22,7 @@ const Logo: React.FC = () => {
 
   return (
     <motion.svg
-      className="w-[46px] h-[46px] fill-accent cursor-pointer z-50"
+      className="w-[48px] h-[48px] fill-accent cursor-pointer z-50"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 46 46"
       onClick={handleClick}

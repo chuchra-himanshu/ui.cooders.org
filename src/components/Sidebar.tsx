@@ -15,7 +15,7 @@ const Sidebar: React.FC = () => {
   const handleItemClick = (path: string) => navigate(path);
 
   return (
-    <section className="h-full hidden md:block w-[50px] lg:w-[220px] border-r border-border-primary transition-[width] duration-300 ease-in-out">
+    <section className="h-full hidden md:block w-[220px] border-r border-border-primary transition-[width] duration-300 ease-in-out">
       {SIDEBAR.SIDEBAR_FIELDS.map((item) => (
         <SidebarItem
           key={item.slug}
