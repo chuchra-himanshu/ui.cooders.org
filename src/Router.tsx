@@ -1,16 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { StudioLayout } from "./layouts";
-import {
-  Builder,
-  Community,
-  Dashboard,
-  MaterialUI,
-  PrimeReact,
-  Settings,
-  ShadCN,
-  Studio,
-} from "./pages";
+import { Community, Dashboard, Settings, Studio } from "./pages";
 
 const Router: React.FC = () => {
   return (
@@ -20,10 +11,6 @@ const Router: React.FC = () => {
           <Route path="" Component={Dashboard} />
           <Route path="studio" Component={Studio} />
           <Route path="community" Component={Community} />
-          <Route path="mui" Component={MaterialUI} />
-          <Route path="shadcn" Component={ShadCN} />
-          <Route path="prime-react" Component={PrimeReact} />
-          <Route path="builder" Component={Builder} />
           <Route path="settings" Component={Settings} />
         </Route>
       </Routes>

@@ -16,7 +16,7 @@ const Header: React.FC = () => {
   const navItems = useMemo(() => HEADER.NAVBAR_ITEMS || [], []);
 
   return (
-    <header className="h-[78px] border-b border-b-border-primary flex items-center justify-between px-5">
+    <header className="h-[80px] border-b border-b-border-primary flex items-center justify-between px-5">
       <section className="flex items-center">
         <Logo />
       </section>

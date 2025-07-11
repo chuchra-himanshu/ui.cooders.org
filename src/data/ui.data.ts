@@ -8,11 +8,11 @@ const NAVBAR_ITEMS = [
     slug: "/studio",
   },
   {
-    title: "BUILDER",
-    slug: "/builder",
+    title: "COMMUNITY",
+    slug: "/community",
   },
   {
-    title: "COMMUNITY",
+    title: "NOTEBOOK",
     slug: "/community",
   },
 ];
