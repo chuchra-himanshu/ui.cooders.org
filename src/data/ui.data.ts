@@ -1,39 +1,18 @@
-import { IoSettingsSharp, IoGrid, IoConstruct } from "react-icons/io5";
-import { SiMui, SiShadcnui, SiPrimereact } from "react-icons/si";
-
-const SIDEBAR_FIELDS = [
+const NAVBAR_ITEMS = [
   {
-    title: "Dashboard",
-    icon: IoGrid,
+    title: "DASHBOARD",
     slug: "/",
   },
   {
-    title: "Material UI",
-    icon: SiMui,
-    slug: "/mui",
+    title: "STUDIO",
+    slug: "/studio",
   },
   {
-    title: "ShadCN",
-    icon: SiShadcnui,
-    slug: "/shadcn",
-  },
-  {
-    title: "PrimeReact",
-    icon: SiPrimereact,
-    slug: "/prime-react",
-  },
-  {
-    title: "Builder",
-    icon: IoConstruct,
+    title: "BUILDER",
     slug: "/builder",
-  },
-  {
-    title: "Settings",
-    icon: IoSettingsSharp,
-    slug: "/settings",
   },
 ];
 
-export const SIDEBAR = {
-  SIDEBAR_FIELDS,
+export const HEADER = {
+  NAVBAR_ITEMS,
 };

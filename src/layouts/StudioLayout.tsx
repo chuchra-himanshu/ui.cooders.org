@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
-import { DeviceBlocker, Footer, Header, Sidebar } from "../components";
+import { DeviceBlocker, Footer, Header } from "../components";
 
 const StudioLayout: React.FC = () => {
   const [isMobileOrTablet, setIsMobileOrTablet] = useState<boolean>(false);
@@ -21,7 +21,6 @@ const StudioLayout: React.FC = () => {
       <section className="h-screen bg-background-primary flex flex-col justify-between">
         <Header />
         <section className="h-full flex">
-          <Sidebar />
           <Outlet />
         </section>
         <Footer />

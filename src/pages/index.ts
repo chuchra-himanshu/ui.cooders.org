@@ -4,5 +4,6 @@ import ShadCN from "./ShadCN";
 import PrimeReact from "./PrimeReact";
 import Builder from "./Builder";
 import Settings from "./Settings";
+import Studio from "./Studio";
 
-export { Dashboard, MaterialUI, ShadCN, PrimeReact, Builder, Settings };
+export { Dashboard, MaterialUI, ShadCN, PrimeReact, Builder, Settings, Studio };

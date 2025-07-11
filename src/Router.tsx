@@ -8,6 +8,7 @@ import {
   PrimeReact,
   Settings,
   ShadCN,
+  Studio,
 } from "./pages";
 
 const Router: React.FC = () => {
@@ -16,6 +17,7 @@ const Router: React.FC = () => {
       <Routes>
         <Route path="/" Component={StudioLayout}>
           <Route path="" Component={Dashboard} />
+          <Route path="studio" Component={Studio} />
           <Route path="mui" Component={MaterialUI} />
           <Route path="shadcn" Component={ShadCN} />
           <Route path="prime-react" Component={PrimeReact} />

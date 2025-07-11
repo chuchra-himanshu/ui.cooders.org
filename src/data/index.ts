@@ -1,3 +1,3 @@
-import { SIDEBAR } from "./ui.data";
+import { HEADER } from "./ui.data";
 
-export { SIDEBAR };
+export { HEADER };
