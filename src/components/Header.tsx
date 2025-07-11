@@ -8,6 +8,7 @@ import {
   type NavigateFunction,
 } from "react-router-dom";
 import { HEADER } from "../data";
+import { FaHamburger } from "react-icons/fa";
 
 const Header: React.FC = () => {
   const location: Location = useLocation();
@@ -16,10 +17,10 @@ const Header: React.FC = () => {
 
   return (
     <header className="h-[72px] border-b border-b-border-primary flex items-center justify-between px-5">
-      <section className="flex items-center w-[8%]">
+      <section className="flex items-center">
         <Logo />
       </section>
-      <section className="flex items-center justify-center gap-5">
+      <section className="hidden md:flex items-center justify-center gap-5">
         {navItems.map((navItem) => {
           const isActive = navItem.slug === location.pathname;
           return (
@@ -38,12 +39,22 @@ const Header: React.FC = () => {
           );
         })}
       </section>
-      <section className="flex items-center gap-2 w-[8%] justify-end">
-        <IconButton
-          Icon={PiBellRingingFill}
-          iconClassNames="h-[22px] w-[22px] text-accent"
-        />
-        <Avatar />
+      <section className="flex items-center gap-2 justify-end">
+        <div className="hidden md:block">
+          <IconButton
+            Icon={PiBellRingingFill}
+            iconClassNames="h-[22px] w-[22px] text-accent"
+          />
+        </div>
+        <div className="hidden md:block">
+          <Avatar />
+        </div>
+        <div className="md:hidden">
+          <IconButton
+            Icon={FaHamburger}
+            iconClassNames="h-[22px] w-[22px] text-accent"
+          />
+        </div>
       </section>
     </header>
   );

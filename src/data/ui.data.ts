@@ -11,6 +11,10 @@ const NAVBAR_ITEMS = [
     title: "BUILDER",
     slug: "/builder",
   },
+  {
+    title: "COMMUNITY",
+    slug: "/community",
+  },
 ];
 
 export const HEADER = {

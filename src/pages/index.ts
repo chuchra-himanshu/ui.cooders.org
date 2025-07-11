@@ -5,5 +5,15 @@ import PrimeReact from "./PrimeReact";
 import Builder from "./Builder";
 import Settings from "./Settings";
 import Studio from "./Studio";
+import Community from "./Community";
 
-export { Dashboard, MaterialUI, ShadCN, PrimeReact, Builder, Settings, Studio };
+export {
+  Dashboard,
+  MaterialUI,
+  ShadCN,
+  PrimeReact,
+  Builder,
+  Settings,
+  Studio,
+  Community,
+};
