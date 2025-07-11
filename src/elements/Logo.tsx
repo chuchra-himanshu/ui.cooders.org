@@ -21,7 +21,7 @@ const Logo: React.FC = () => {
 
   return (
     <motion.svg
-      className="w-[70px] h-[70px] fill-accent cursor-pointer rotate-180 -mt-1"
+      className="w-[60px] h-[70px] fill-accent cursor-pointer rotate-180 -mt-[14px]"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 66 48"
       onClick={handleClick}
@@ -40,31 +40,44 @@ const Logo: React.FC = () => {
           : { scale: 1 }
       }
     >
-      {blocks.map((block, index) => (
-        <motion.polygon
-          key={index}
-          points={block.points}
-          opacity={block.opacity}
-          initial={{ x: 0, y: 0, rotate: 0, scale: 1 }}
-          animate={
-            scattered
-              ? {
-                  x: (Math.random() - 0.5) * 20,
-                  y: (Math.random() - 0.5) * 20,
-                  rotate: (Math.random() - 0.5) * 25,
-                  scale: 1.1,
-                  transition: { duration: 0.2 },
-                }
-              : {
-                  x: 0,
-                  y: 0,
-                  rotate: 0,
-                  scale: 1,
-                  transition: { duration: 0.3 },
-                }
-          }
-        />
-      ))}
+      <>
+        {blocks.map((block, index) => (
+          <motion.polygon
+            key={index}
+            points={block.points}
+            opacity={block.opacity}
+            initial={{ x: 0, y: 0, rotate: 0, scale: 1 }}
+            animate={
+              scattered
+                ? {
+                    x: (Math.random() - 0.5) * 20,
+                    y: (Math.random() - 0.5) * 20,
+                    rotate: (Math.random() - 0.5) * 25,
+                    scale: 1.1,
+                    transition: { duration: 0.2 },
+                  }
+                : {
+                    x: 0,
+                    y: 0,
+                    rotate: 0,
+                    scale: 1,
+                    transition: { duration: 0.3 },
+                  }
+            }
+          />
+        ))}
+        <text
+          x="11.5"
+          y="59"
+          fill="#4184f3"
+          fontSize="12"
+          fontWeight={650}
+          fontFamily="sans-serif"
+          transform="rotate(180, 33, 24)"
+        >
+          STUDIO
+        </text>
+      </>
     </motion.svg>
   );
 };
