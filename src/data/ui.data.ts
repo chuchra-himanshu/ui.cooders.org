@@ -12,6 +12,10 @@ const NAVBAR_ITEMS = [
     slug: "/community",
   },
   {
+    title: "SOLVEX",
+    slug: "/community",
+  },
+  {
     title: "NOTEBOOK",
     slug: "/community",
   },

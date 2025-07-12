@@ -1,4 +1,5 @@
 import Header from "./Header";
 import Footer from "./Footer";
+import StudioSidebar from "./StudioSidebar";
 
-export { Header, Footer };
+export { Header, Footer, StudioSidebar };
