@@ -21,7 +21,7 @@ const Logo: React.FC = () => {
 
   return (
     <motion.svg
-      className="w-[60px] h-[72px] fill-accent cursor-pointer rotate-180 -mt-[14px]"
+      className="w-[68px] h-[72px] fill-accent cursor-pointer rotate-180 -mt-[4px]"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 66 48"
       onClick={handleClick}
@@ -32,7 +32,7 @@ const Logo: React.FC = () => {
           ? {
               scale: [1, 1.05, 1],
               transition: {
-                duration: 0.6,
+                duration: 0.4,
                 repeat: Infinity,
                 ease: "easeInOut",
               },
@@ -46,7 +46,7 @@ const Logo: React.FC = () => {
             key={index}
             points={block.points}
             opacity={block.opacity}
-            initial={{ x: 0, y: 0, rotate: 0, scale: 1 }}
+            initial={{ x: 0, y: 0, rotate: 60, scale: 5 }}
             animate={
               scattered
                 ? {
@@ -61,22 +61,11 @@ const Logo: React.FC = () => {
                     y: 0,
                     rotate: 0,
                     scale: 1,
-                    transition: { duration: 0.3 },
+                    transition: { duration: 0.2 },
                   }
             }
           />
         ))}
-        <text
-          x="11.5"
-          y="59"
-          fill="#4184f3"
-          fontSize="12"
-          fontWeight={650}
-          fontFamily="sans-serif"
-          transform="rotate(180, 33, 24)"
-        >
-          STUDIO
-        </text>
       </>
     </motion.svg>
   );
