@@ -1,8 +1,11 @@
 {
-  "name": "ui.studio.cooders.org",
+  "name": "ui.cooders.org",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "author": "Himanshu Chuchra",
+  "repository": "https://github.com/chuchra-himanshu/ui.cooders.org.git",
+  "description": "🌍 A unified platform giving developers some superpowers like 📊 Dashboard, 🎨 Studio, 🫂 Community, 🧠 SolveX, and 📘 Notebook.🧩 Everything a developer needs — in one connected ecosystem. 🔒 Secure, scalable, and crafted for global collaborations.",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
