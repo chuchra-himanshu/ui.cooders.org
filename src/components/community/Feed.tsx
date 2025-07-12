@@ -5,6 +5,7 @@ import {
   FaCommentAlt,
   FaQuoteRight,
   FaBookmark,
+  FaBars,
 } from "react-icons/fa";
 import { FaRepeat } from "react-icons/fa6";
 
@@ -24,6 +25,9 @@ const Feed: React.FC = () => {
                 @himanshuchuchra
               </p>
             </div>
+          </div>
+          <div className="flex items-center justify-center bg-neutral-950/50 h-[30px] w-[30px] rounded-full cursor-pointer text-white/40 hover:bg-accent/5 hover:text-accent transition-all ease-in-out duration-200">
+            <FaBars className="-mt-[0.2px]" size={15.5} />
           </div>
         </div>
         <p className="text-[14.5px] text-justify leading-[19px] mt-[10px] mx-[5px] text-white line-clamp-3">
