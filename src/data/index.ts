@@ -1,3 +1,3 @@
-import { HEADER } from "./ui.data";
+import { HEADER } from "./global.data";
 
 export { HEADER };

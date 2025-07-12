@@ -13,11 +13,11 @@ const NAVBAR_ITEMS = [
   },
   {
     title: "SOLVEX",
-    slug: "/community",
+    slug: "/solvex",
   },
   {
     title: "NOTEBOOK",
-    slug: "/community",
+    slug: "/notebook",
   },
 ];
 

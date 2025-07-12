@@ -1,3 +1,3 @@
-import StudioLayout from "./StudioLayout";
+import GlobalLayout from "./GlobalLayout";
 
-export { StudioLayout };
+export { GlobalLayout };

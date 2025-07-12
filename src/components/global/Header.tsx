@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { Avatar, Logo, IconButton } from "../elements";
+import { Avatar, Logo, IconButton } from "../../elements";
 import { PiBellRingingFill } from "react-icons/pi";
 import {
   useLocation,
@@ -7,7 +7,7 @@ import {
   type Location,
   type NavigateFunction,
 } from "react-router-dom";
-import { HEADER } from "../data";
+import { HEADER } from "../../data";
 import { FaHamburger } from "react-icons/fa";
 
 const Header: React.FC = () => {

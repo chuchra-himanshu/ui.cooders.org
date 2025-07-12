@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useMemo } from "react";
-import { SidebarToggleButton } from "../elements";
+import { SidebarToggleButton } from "../../elements";
 import SidebarHeader from "./SidebarHeader";
 import LibraryListPanel from "./LibraryListPanel";
 import ComponentListPanel from "./ComponentListPanel";

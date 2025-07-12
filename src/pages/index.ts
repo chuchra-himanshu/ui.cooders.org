@@ -1,6 +1,7 @@
 import Dashboard from "./Dashboard";
-import Settings from "./Settings";
 import Studio from "./Studio";
 import Community from "./Community";
+import SolveX from "./SolveX";
+import Notebook from "./Notebook";
 
-export { Dashboard, Settings, Studio, Community };
+export { Dashboard, Studio, Community, SolveX, Notebook };

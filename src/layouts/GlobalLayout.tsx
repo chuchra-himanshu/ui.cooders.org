@@ -2,7 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import { Footer, Header } from "../components";
 
-const StudioLayout: React.FC = () => {
+const GlobalLayout: React.FC = () => {
   return (
     <section className="h-screen bg-background-primary flex flex-col justify-between">
       <Header />
@@ -14,4 +14,4 @@ const StudioLayout: React.FC = () => {
   );
 };
 
-export default StudioLayout;
+export default GlobalLayout;
