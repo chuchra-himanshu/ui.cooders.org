@@ -7,5 +7,6 @@ import StudioSidebar from "./studio/StudioSidebar";
 
 // COMMUNITY
 import CommunitySidebar from "./community/CommunitySidebar";
+import Feed from "./community/Feed";
 
-export { Header, Footer, StudioSidebar, CommunitySidebar };
+export { Header, Footer, StudioSidebar, CommunitySidebar, Feed };
