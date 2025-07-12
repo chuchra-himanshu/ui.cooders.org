@@ -5,4 +5,7 @@ import Footer from "./global/Footer";
 // STUDIO
 import StudioSidebar from "./studio/StudioSidebar";
 
-export { Header, Footer, StudioSidebar };
+// COMMUNITY
+import CommunitySidebar from "./community/CommunitySidebar";
+
+export { Header, Footer, StudioSidebar, CommunitySidebar };

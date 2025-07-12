@@ -46,7 +46,7 @@ const Logo: React.FC = () => {
             key={index}
             points={block.points}
             opacity={block.opacity}
-            initial={{ x: 0, y: 0, rotate: 60, scale: 5 }}
+            initial={{ x: 0, y: 0, rotate: 60, scale: 1 }}
             animate={
               scattered
                 ? {
