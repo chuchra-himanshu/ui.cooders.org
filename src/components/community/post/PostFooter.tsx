@@ -4,6 +4,8 @@ import {
   FaCommentAlt,
   FaHeart,
   FaQuoteRight,
+  FaTags,
+  FaUserTag,
 } from "react-icons/fa";
 import { FaRepeat } from "react-icons/fa6";
 
@@ -24,8 +26,16 @@ const PostFooter: React.FC = () => {
           <FaRepeat className="mt-[0.5px]" size={15} />
         </div>
       </div>
-      <div className="flex items-center justify-center bg-neutral-950/50 h-[30px] w-[30px] rounded-full cursor-pointer text-white/40 hover:bg-accent/5 hover:text-accent transition-all ease-in-out duration-200">
-        <FaBookmark className="mt-[0.5px] mr-[0.1px]" size={15} />
+      <div className="flex items-center gap-1">
+        <div className="flex items-center justify-center bg-neutral-950/50 h-[30px] w-[30px] rounded-full cursor-pointer text-white/40 hover:bg-accent/5 hover:text-accent transition-all ease-in-out duration-200">
+          <FaTags className="mt-[0.5px] ml-[0.9px]" size={15.5} />
+        </div>
+        <div className="flex items-center justify-center bg-neutral-950/50 h-[30px] w-[30px] rounded-full cursor-pointer text-white/40 hover:bg-accent/5 hover:text-accent transition-all ease-in-out duration-200">
+          <FaUserTag className="ml-[2px] -mt-[1px]" size={17} />
+        </div>
+        <div className="flex items-center justify-center bg-neutral-950/50 h-[30px] w-[30px] rounded-full cursor-pointer text-white/40 hover:bg-accent/5 hover:text-accent transition-all ease-in-out duration-200">
+          <FaBookmark className="mt-[0.5px] mr-[0.1px]" size={15} />
+        </div>
       </div>
     </div>
   );

@@ -22,7 +22,7 @@ const PostImagesGrid: React.FC<PostImagesGridProps> = ({
 
     if (count === 1) {
       return (
-        <section className="h-[260px] w-full rounded-[6px] overflow-hidden">
+        <section className="h-[280px] w-full rounded-[6px] overflow-hidden">
           <img
             src={images[0]}
             onClick={() => handleClick(0)}
@@ -35,7 +35,7 @@ const PostImagesGrid: React.FC<PostImagesGridProps> = ({
 
     if (count === 2) {
       return (
-        <section className="h-[260px] w-full flex justify-between rounded-[6px] overflow-hidden">
+        <section className="h-[280px] w-full flex justify-between rounded-[6px] overflow-hidden">
           {images.map((img, i) => (
             <div
               key={i}
@@ -51,7 +51,7 @@ const PostImagesGrid: React.FC<PostImagesGridProps> = ({
 
     if (count === 3) {
       return (
-        <section className="h-[260px] w-full flex flex-col justify-between rounded-[6px] overflow-hidden">
+        <section className="h-[280px] w-full flex flex-col justify-between rounded-[6px] overflow-hidden">
           <div
             className="h-[49.5%] w-full cursor-pointer overflow-hidden"
             onClick={() => handleClick(0)}
@@ -75,7 +75,7 @@ const PostImagesGrid: React.FC<PostImagesGridProps> = ({
 
     if (count === 4) {
       return (
-        <section className="h-[260px] w-full flex flex-col justify-between rounded-[6px] overflow-hidden">
+        <section className="h-[280px] w-full flex flex-col justify-between rounded-[6px] overflow-hidden">
           <section className="h-[49.5%] flex justify-between">
             {images.slice(0, 2).map((img, i) => (
               <div
@@ -104,7 +104,7 @@ const PostImagesGrid: React.FC<PostImagesGridProps> = ({
 
     // >4 images
     return (
-      <section className="h-[260px] w-full flex flex-col justify-between rounded-[6px] overflow-hidden">
+      <section className="h-[280px] w-full flex flex-col justify-between rounded-[6px] overflow-hidden">
         <section className="h-[49.5%] flex justify-between">
           {visibleImages.slice(0, 2).map((img, i) => (
             <div
@@ -141,7 +141,7 @@ const PostImagesGrid: React.FC<PostImagesGridProps> = ({
     );
   };
 
-  return renderImages();
+  return <section className="mt-[10px] mx-1">{renderImages()}</section>;
 };
 
 export default PostImagesGrid;

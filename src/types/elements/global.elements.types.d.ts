@@ -5,4 +5,5 @@ interface IconButtonPropsInterface {
 
 interface AvatarPropsInterface {
   userAvatarURL?: string;
+  classes?: string;
 }
