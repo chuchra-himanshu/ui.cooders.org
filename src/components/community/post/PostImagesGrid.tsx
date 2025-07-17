@@ -129,7 +129,7 @@ const PostImagesGrid: React.FC<PostImagesGridProps> = ({
               >
                 <img src={img} className={commonImageClass} alt="" />
                 {realIndex === 3 && hiddenCount > 0 && (
-                  <div className="absolute inset-0 bg-black/50 text-white/50 text-[32px] font-semibold flex items-center justify-center">
+                  <div className="absolute inset-0 bg-black/50 text-text-secondary text-[32px] font-semibold flex items-center justify-center">
                     +{hiddenCount}
                   </div>
                 )}

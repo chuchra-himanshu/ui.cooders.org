@@ -22,7 +22,7 @@ const SidebarHeader: React.FC<SidebarHeaderPropsInterface> = ({
           key={index}
           size={size}
           aria-label={label}
-          className="text-white/40 mt-[1px] cursor-pointer transition-all ease-in-out duration-200 hover:text-accent"
+          className="text-text-secondary mt-[1px] cursor-pointer transition-all ease-in-out duration-200 hover:text-accent"
           onClick={() => handleIconButtonClick(index)}
         />
       ))}

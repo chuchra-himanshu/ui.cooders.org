@@ -4,7 +4,9 @@
   --color-background-primary: #101010;
   --color-border-primary: #404040;
   --color-accent: #4184f3;
+  --color-overlay-primary: #1a1a1a;
   --color-text-primary: #efefef;
+  --color-text-secondary: #909090;
 }
 
 * {

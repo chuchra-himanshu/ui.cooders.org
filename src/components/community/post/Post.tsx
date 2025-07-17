@@ -14,7 +14,7 @@ const images = Array.from(
 
 const Post: React.FC = () => {
   return (
-    <section className="w-[430px] bg-white/5 px-4 pt-4 pb-[10px] rounded-[10px]">
+    <section className="w-[430px] bg-overlay-primary px-4 pt-4 pb-[10px] rounded-[10px]">
       <PostHeader />
       <PostDescription />
       <PostImagesGrid images={images} />
@@ -23,16 +23,16 @@ const Post: React.FC = () => {
         <div className="w-10 h-10">
           <Avatar />
         </div>
-        <div className="relative flex items-center bg-white/5 rounded-full px-3 h-[37.5px] w-full max-w-[355px]">
+        <div className="relative flex items-center bg-overlay-primary rounded-full px-3 h-[37.5px] w-full max-w-[355px]">
           <input
             type="text"
             placeholder="Comment ..."
-            className=" bg-transparent text-white outline-none placeholder:text-white/40 text-[15px] w-[91%]"
+            className=" bg-transparent text-text-primary outline-none placeholder:text-text-secondary text-[15px] w-[91%]"
             aria-label="Add a comment"
           />
           <button
             type="button"
-            className="absolute right-1 flex items-center justify-center h-[30px] cursor-pointer w-[30px] rounded-full bg-neutral-950/50 text-white/40 hover:bg-black/50 hover:text-accent transition-all duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            className="absolute right-1 flex items-center justify-center h-[30px] cursor-pointer w-[30px] rounded-full bg-background-primary text-text-secondary hover:bg-black/50 hover:text-accent transition-all duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             aria-label="Send comment"
           >
             <IoSend className="mt-px ml-[1px]" size={16} />

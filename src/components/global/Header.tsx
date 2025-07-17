@@ -28,7 +28,7 @@ const Header: React.FC = () => {
               key={navItem.slug}
               onClick={() => navigate(navItem.slug)}
               className={`relative cursor-pointer text-[16px] font-semibold transition-all duration-300 ease-in-out
-                ${isActive ? "text-accent" : "text-white"}
+                ${isActive ? "text-accent" : "text-text-primary"}
                 before:absolute before:-bottom-1 before:left-0 before:h-[2px] before:w-full
                 before:scale-x-0 before:origin-left before:transition-transform before:duration-300 before:ease-in-out
                 hover:before:scale-x-100 before:bg-accent hover:text-accent
