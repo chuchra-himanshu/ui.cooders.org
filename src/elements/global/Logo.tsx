@@ -10,7 +10,7 @@ const blocks = [
   { points: "22,34 32,24 42,34 32,44", opacity: 1 },
 ];
 
-const Logo: React.FC = () => {
+const Logo: React.FC<LogoPropsInterface> = ({ classes }) => {
   const [scattered, setScattered] = useState(false);
   const [hovered, setHovered] = useState(false);
 
@@ -21,7 +21,7 @@ const Logo: React.FC = () => {
 
   return (
     <motion.svg
-      className="w-[68px] h-[72px] fill-accent cursor-pointer rotate-180 -mt-[4px]"
+      className={`w-[68px] h-[72px] fill-accent cursor-pointer rotate-180 -mt-[4px] ${classes}`}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 66 48"
       onClick={handleClick}

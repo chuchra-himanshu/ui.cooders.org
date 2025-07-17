@@ -15,6 +15,10 @@ const Header: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
   const navItems = useMemo(() => HEADER.NAVBAR_ITEMS || [], []);
 
+  const handleAvatarClick = () => {
+    navigate("/signin");
+  };
+
   return (
     <header className="h-[80px] border-b border-b-border-primary flex items-center justify-between px-5">
       <section className="flex items-center">
@@ -47,7 +51,7 @@ const Header: React.FC = () => {
           />
         </div>
         <div className="hidden md:block">
-          <Avatar />
+          <Avatar clickHandler={handleAvatarClick} />
         </div>
         <div className="md:hidden">
           <IconButton

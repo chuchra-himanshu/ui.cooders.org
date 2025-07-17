@@ -1,7 +1,14 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { GlobalLayout } from "./layouts";
-import { Community, Dashboard, Notebook, SolveX, Studio } from "./pages";
+import { AuthLayout, GlobalLayout } from "./layouts";
+import {
+  Community,
+  Dashboard,
+  Notebook,
+  SignIn,
+  SolveX,
+  Studio,
+} from "./pages";
 
 const Router: React.FC = () => {
   return (
@@ -13,6 +20,9 @@ const Router: React.FC = () => {
           <Route path="community" Component={Community} />
           <Route path="solvex" Component={SolveX} />
           <Route path="notebook" Component={Notebook} />
+        </Route>
+        <Route path="/" Component={AuthLayout}>
+          <Route path="signin" Component={SignIn} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -7,4 +7,14 @@ import SidebarToggleButton from "./global/SidebarToggleButton";
 // STUDIO
 import BuilderButton from "./studio/BuilderButton";
 
-export { Logo, IconButton, Avatar, BuilderButton, SidebarToggleButton };
+// AUTH
+import AuthLayoutButton from "./auth/AuthLayoutButton";
+
+export {
+  Logo,
+  IconButton,
+  Avatar,
+  BuilderButton,
+  SidebarToggleButton,
+  AuthLayoutButton,
+};
