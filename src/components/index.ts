@@ -9,4 +9,24 @@ import StudioSidebar from "./studio/StudioSidebar";
 import CommunitySidebar from "./community/CommunitySidebar";
 import Feed from "./community/Feed";
 
-export { Header, Footer, StudioSidebar, CommunitySidebar, Feed };
+// AUTH
+import AuthFormContainer from "./auth/AuthFormContainer";
+import TextInput from "./auth/TextInput";
+import SubmitButton from "./auth/SubmitButton";
+import FormDivider from "./auth/FormDivider";
+import SocialAuth from "./auth/SocialAuth";
+import CheckboxInput from "./auth/CheckboxInput";
+
+export {
+  Header,
+  Footer,
+  StudioSidebar,
+  CommunitySidebar,
+  Feed,
+  AuthFormContainer,
+  TextInput,
+  SubmitButton,
+  FormDivider,
+  SocialAuth,
+  CheckboxInput,
+};
