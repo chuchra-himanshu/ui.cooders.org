@@ -5,6 +5,7 @@ import {
   ChangePassword,
   Community,
   Dashboard,
+  EmailVerification,
   ForgetPassword,
   Notebook,
   SignIn,
@@ -29,6 +30,7 @@ const Router: React.FC = () => {
           <Route path="signup" Component={SignUp} />
           <Route path="forgets/password" Component={ForgetPassword} />
           <Route path="updates/password" Component={ChangePassword} />
+          <Route path="validates/email" Component={EmailVerification} />
         </Route>
       </Routes>
     </BrowserRouter>

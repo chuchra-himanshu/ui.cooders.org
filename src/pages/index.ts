@@ -7,6 +7,7 @@ import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import ForgetPassword from "./ForgetPassword";
 import ChangePassword from "./ChangePassword";
+import EmailVerification from "./EmailVerification";
 
 export {
   Dashboard,
@@ -18,4 +19,5 @@ export {
   SignUp,
   ForgetPassword,
   ChangePassword,
+  EmailVerification,
 };
