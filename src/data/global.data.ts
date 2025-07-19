@@ -19,6 +19,10 @@ const NAVBAR_ITEMS = [
     title: "NOTEBOOK",
     slug: "/notebook",
   },
+  {
+    title: "MOCKAPI",
+    slug: "/notebook",
+  },
 ];
 
 export const HEADER = {
