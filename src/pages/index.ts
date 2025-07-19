@@ -8,6 +8,7 @@ import SignUp from "./SignUp";
 import ForgetPassword from "./ForgetPassword";
 import ChangePassword from "./ChangePassword";
 import EmailVerification from "./EmailVerification";
+import TwoFactorAuthentication from "./TwoFactorAuthentication";
 
 export {
   Dashboard,
@@ -20,4 +21,5 @@ export {
   ForgetPassword,
   ChangePassword,
   EmailVerification,
+  TwoFactorAuthentication,
 };

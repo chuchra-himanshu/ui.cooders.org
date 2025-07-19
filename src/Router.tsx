@@ -12,6 +12,7 @@ import {
   SignUp,
   SolveX,
   Studio,
+  TwoFactorAuthentication,
 } from "./pages";
 
 const Router: React.FC = () => {
@@ -31,6 +32,7 @@ const Router: React.FC = () => {
           <Route path="forgets/password" Component={ForgetPassword} />
           <Route path="updates/password" Component={ChangePassword} />
           <Route path="validates/email" Component={EmailVerification} />
+          <Route path="validates/tfa" Component={TwoFactorAuthentication} />
         </Route>
       </Routes>
     </BrowserRouter>
