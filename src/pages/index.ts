@@ -5,5 +5,17 @@ import SolveX from "./SolveX";
 import Notebook from "./Notebook";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
+import ForgetPassword from "./ForgetPassword";
+import ChangePassword from "./ChangePassword";
 
-export { Dashboard, Studio, Community, SolveX, Notebook, SignIn, SignUp };
+export {
+  Dashboard,
+  Studio,
+  Community,
+  SolveX,
+  Notebook,
+  SignIn,
+  SignUp,
+  ForgetPassword,
+  ChangePassword,
+};

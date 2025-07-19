@@ -2,8 +2,10 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthLayout, GlobalLayout } from "./layouts";
 import {
+  ChangePassword,
   Community,
   Dashboard,
+  ForgetPassword,
   Notebook,
   SignIn,
   SignUp,
@@ -25,6 +27,8 @@ const Router: React.FC = () => {
         <Route path="/" Component={AuthLayout}>
           <Route path="signin" Component={SignIn} />
           <Route path="signup" Component={SignUp} />
+          <Route path="forgets/password" Component={ForgetPassword} />
+          <Route path="updates/password" Component={ChangePassword} />
         </Route>
       </Routes>
     </BrowserRouter>

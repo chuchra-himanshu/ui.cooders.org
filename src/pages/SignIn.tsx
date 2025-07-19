@@ -55,12 +55,13 @@ const SignIn: React.FC = () => {
           />
           <button
             type="button"
+            onClick={() => navigate("/updates/password")}
             className="text-text-secondary hover:text-accent text-[17px] font-medium transition-all duration-200 mt-[1.5px] cursor-pointer"
           >
             Forgot Password
           </button>
         </section>
-        <p className="mb-[18px] text-text-secondary text-[17px] font-medium transition-all duration-200 text-center">
+        <p className="mb-[20px] text-text-secondary text-[17px] font-medium transition-all duration-200 text-center">
           {"if(!isMember) "}
           <span
             className="hover:text-accent cursor-pointer"

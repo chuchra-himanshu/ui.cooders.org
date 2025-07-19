@@ -16,6 +16,7 @@ interface FormDividerPropsInterface {
 
 interface SubmitButtonPropsInterface {
   label: string;
+  includeBottomMargin?: boolean;
 }
 
 interface TextInputPropsInterface {

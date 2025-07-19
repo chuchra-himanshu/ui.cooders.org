@@ -8,7 +8,7 @@ const AuthLayoutButton: React.FC<AuthLayoutButtonPropsInterface> = ({
     <div className="flex justify-center" onClick={clickListener}>
       <p className="cursor-pointer relative flex items-center px-[24px] py-[6px] font-semibold text-[25px] text-[#efefef] hover:text-accent bg-[#4184f3]/5 rounded-full shadow-[0_0_0.2em_#4184f3] font-poppins transition duration-1000 hover:shadow-[0_0_0.4em_#4184f3] outline outline-transparent outline-offset-2 group">
         <span className="z-10">{title}</span>
-        <span className="ml-[15px] relative top-[3%] w-[20px] transition-all duration-500 group-hover:mr-[25px] scale-[0.6]">
+        <span className="ml-[15px] relative top-[2.4%] w-[20px] transition-all duration-500 group-hover:mr-[25px] scale-[0.6]">
           <svg
             width="48"
             height="38"
