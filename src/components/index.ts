@@ -16,6 +16,7 @@ import SubmitButton from "./auth/SubmitButton";
 import FormDivider from "./auth/FormDivider";
 import SocialAuth from "./auth/SocialAuth";
 import CheckboxInput from "./auth/CheckboxInput";
+import OTPInput from "./auth/OTPInput";
 
 export {
   Header,
@@ -29,4 +30,5 @@ export {
   FormDivider,
   SocialAuth,
   CheckboxInput,
+  OTPInput,
 };

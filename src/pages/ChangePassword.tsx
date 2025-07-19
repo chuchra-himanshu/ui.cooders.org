@@ -8,7 +8,7 @@ interface ChangePasswordFormDataInterface {
   confirmPassword: string;
 }
 
-const ChangePassword: React.FC<ChangePasswordFormDataInterface> = () => {
+const ChangePassword: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
 
   const initialData: ChangePasswordFormDataInterface = {

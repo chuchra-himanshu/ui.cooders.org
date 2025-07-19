@@ -55,7 +55,7 @@ const SignIn: React.FC = () => {
           />
           <button
             type="button"
-            onClick={() => navigate("/updates/password")}
+            onClick={() => navigate("/forgets/password")}
             className="text-text-secondary hover:text-accent text-[17px] font-medium transition-all duration-200 mt-[1.5px] cursor-pointer"
           >
             Forgot Password
