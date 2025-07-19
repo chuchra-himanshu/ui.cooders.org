@@ -1,9 +1,5 @@
 import React from "react";
 
-interface SubmitButtonPropsInterface {
-  label: string;
-}
-
 const SubmitButton: React.FC<SubmitButtonPropsInterface> = ({ label }) => {
   return (
     <button

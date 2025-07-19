@@ -8,36 +8,44 @@ import {
   TextInput,
 } from "../components";
 
-interface SignInFormDataInterface {
+interface SignUpFormDataInterface {
+  email: string;
   username: string;
   password: string;
   rememberMe: boolean;
 }
 
-const SignIn: React.FC = () => {
-  const initialData: SignInFormDataInterface = {
+const SignUp: React.FC = () => {
+  const initialData: SignUpFormDataInterface = {
+    email: "",
     username: "",
     password: "",
     rememberMe: false,
   };
 
   const [formData, setFormData] =
-    useState<SignInFormDataInterface>(initialData);
+    useState<SignUpFormDataInterface>(initialData);
 
   const handleCheckboxChange = () => {
     setFormData((prev) => ({ ...prev, ["rememberMe"]: !prev.rememberMe }));
   };
 
   return (
-    <AuthFormContainer formTitle="Sign In">
+    <AuthFormContainer formTitle="Sign Up">
       <TextInput
-        id="signin-username"
+        id="signup-email"
+        inputType="email"
+        label="Email Address"
+        required={true}
+      />
+      <TextInput
+        id="signup-username"
         inputType="text"
         label="Username"
         required={true}
       />
       <TextInput
-        id="signin-password"
+        id="signup-password"
         inputType="password"
         label="Password"
         required={true}
@@ -45,7 +53,7 @@ const SignIn: React.FC = () => {
       <section className="pt-1">
         <section className="flex items-center justify-between w-[400px] h-[24px] mb-[22px]">
           <CheckboxInput
-            id="signin-rememberme"
+            id="signup-rememberme"
             label="Remember Me"
             handleCheckboxClick={handleCheckboxChange}
             checkboxClickStatus={formData.rememberMe}
@@ -54,12 +62,12 @@ const SignIn: React.FC = () => {
             type="button"
             className="text-text-secondary hover:text-accent text-[17px] font-medium transition-all duration-200 mt-[1.5px] cursor-pointer"
           >
-            Forgot Password
+            Ghost Mode
           </button>
         </section>
         <p className="mb-[22px] text-text-secondary text-[17px] font-medium transition-all duration-200 text-center">
-          New to cooders community?{" "}
-          <span className="hover:text-accent cursor-pointer">Sign Up</span>
+          Already part of cooders?{" "}
+          <span className="hover:text-accent cursor-pointer">Sign In</span>
         </p>
       </section>
       <SubmitButton label="Submit" />
@@ -69,4 +77,4 @@ const SignIn: React.FC = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;

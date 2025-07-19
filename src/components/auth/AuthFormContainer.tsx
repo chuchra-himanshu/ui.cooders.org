@@ -1,9 +1,4 @@
-import React, { type ReactNode } from "react";
-
-interface AuthFormContainerPropsInterface {
-  children: ReactNode;
-  formTitle: string;
-}
+import React from "react";
 
 const AuthFormContainer: React.FC<AuthFormContainerPropsInterface> = ({
   children,

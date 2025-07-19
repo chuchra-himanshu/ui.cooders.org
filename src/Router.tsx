@@ -6,6 +6,7 @@ import {
   Dashboard,
   Notebook,
   SignIn,
+  SignUp,
   SolveX,
   Studio,
 } from "./pages";
@@ -23,6 +24,7 @@ const Router: React.FC = () => {
         </Route>
         <Route path="/" Component={AuthLayout}>
           <Route path="signin" Component={SignIn} />
+          <Route path="signup" Component={SignUp} />
         </Route>
       </Routes>
     </BrowserRouter>

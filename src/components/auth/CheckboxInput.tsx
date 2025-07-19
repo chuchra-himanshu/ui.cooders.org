@@ -1,13 +1,6 @@
 import React from "react";
 import { FaCheck } from "react-icons/fa";
 
-interface CheckboxInputPropsInterface {
-  id: string;
-  handleCheckboxClick: () => void;
-  label: string;
-  checkboxClickStatus: boolean;
-}
-
 const CheckboxInput: React.FC<CheckboxInputPropsInterface> = ({
   id,
   handleCheckboxClick,

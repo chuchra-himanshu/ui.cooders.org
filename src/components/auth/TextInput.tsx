@@ -1,12 +1,5 @@
 import React from "react";
 
-interface TextInputPropsInterface {
-  id: string;
-  label: string;
-  required: boolean;
-  inputType: string;
-}
-
 const TextInput: React.FC<TextInputPropsInterface> = ({
   id,
   inputType,

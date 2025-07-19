@@ -1,9 +1,5 @@
 import React from "react";
 
-interface FormDividerPropsInterface {
-  label?: string;
-}
-
 const FormDivider: React.FC<FormDividerPropsInterface> = ({ label = "OR" }) => {
   return (
     <div className="flex items-center justify-center gap-4 w-[400px] text-text-secondary mb-[22px]">
