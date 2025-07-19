@@ -7,6 +7,7 @@ import {
   SubmitButton,
   TextInput,
 } from "../components";
+import { useNavigate, type NavigateFunction } from "react-router-dom";
 
 interface SignUpFormDataInterface {
   email: string;
@@ -16,6 +17,8 @@ interface SignUpFormDataInterface {
 }
 
 const SignUp: React.FC = () => {
+  const navigate: NavigateFunction = useNavigate();
+
   const initialData: SignUpFormDataInterface = {
     email: "",
     username: "",
@@ -51,24 +54,23 @@ const SignUp: React.FC = () => {
         required={true}
       />
       <section className="pt-1">
-        <section className="flex items-center justify-between w-[400px] h-[24px] mb-[22px]">
+        <section className="flex items-center justify-between w-full h-[24px] mb-[20px]">
           <CheckboxInput
             id="signup-rememberme"
             label="Remember Me"
             handleCheckboxClick={handleCheckboxChange}
             checkboxClickStatus={formData.rememberMe}
           />
-          <button
-            type="button"
-            className="text-text-secondary hover:text-accent text-[17px] font-medium transition-all duration-200 mt-[1.5px] cursor-pointer"
-          >
-            Ghost Mode
-          </button>
+          <p className=" text-text-secondary text-[17px] font-medium transition-all duration-200 text-center mt-[1.5px]">
+            {"if(isMember) "}
+            <span
+              className="hover:text-accent cursor-pointer"
+              onClick={() => navigate("/signin")}
+            >
+              {"SignIn()"}
+            </span>
+          </p>
         </section>
-        <p className="mb-[22px] text-text-secondary text-[17px] font-medium transition-all duration-200 text-center">
-          Already part of cooders?{" "}
-          <span className="hover:text-accent cursor-pointer">Sign In</span>
-        </p>
       </section>
       <SubmitButton label="Submit" />
       <FormDivider />

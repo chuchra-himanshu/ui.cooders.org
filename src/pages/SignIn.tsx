@@ -7,6 +7,7 @@ import {
   SubmitButton,
   TextInput,
 } from "../components";
+import { useNavigate, type NavigateFunction } from "react-router-dom";
 
 interface SignInFormDataInterface {
   username: string;
@@ -15,6 +16,8 @@ interface SignInFormDataInterface {
 }
 
 const SignIn: React.FC = () => {
+  const navigate: NavigateFunction = useNavigate();
+
   const initialData: SignInFormDataInterface = {
     username: "",
     password: "",
@@ -43,7 +46,7 @@ const SignIn: React.FC = () => {
         required={true}
       />
       <section className="pt-1">
-        <section className="flex items-center justify-between w-[400px] h-[24px] mb-[22px]">
+        <section className="flex items-center justify-between w-full h-[24px] mb-[18px]">
           <CheckboxInput
             id="signin-rememberme"
             label="Remember Me"
@@ -57,9 +60,14 @@ const SignIn: React.FC = () => {
             Forgot Password
           </button>
         </section>
-        <p className="mb-[22px] text-text-secondary text-[17px] font-medium transition-all duration-200 text-center">
-          New to cooders community?{" "}
-          <span className="hover:text-accent cursor-pointer">Sign Up</span>
+        <p className="mb-[18px] text-text-secondary text-[17px] font-medium transition-all duration-200 text-center">
+          {"if(!isMember) "}
+          <span
+            className="hover:text-accent cursor-pointer"
+            onClick={() => navigate("/signup")}
+          >
+            {"SignUp()"}
+          </span>
         </p>
       </section>
       <SubmitButton label="Submit" />

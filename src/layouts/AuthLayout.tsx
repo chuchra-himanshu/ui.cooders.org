@@ -6,9 +6,9 @@ const AuthLayout: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="h-screen bg-background-primary flex flex-col justify-between">
-      <section className="flex h-[110px] items-center justify-between px-6 ">
-        <Logo classes="w-[110px] h-[110px]" />
+    <section className="h-screen bg-background-primary flex flex-col justify-between pt-2">
+      <section className="flex h-[85px] items-center justify-between px-6 ">
+        <Logo classes="w-[85px] h-[85px]" />
         <AuthLayoutButton title="SKIP" clickListener={() => navigate("/")} />
       </section>
       <Outlet />

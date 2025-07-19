@@ -5,9 +5,9 @@ const AuthFormContainer: React.FC<AuthFormContainerPropsInterface> = ({
   formTitle,
 }) => {
   return (
-    <section className="flex flex-col items-center justify-center h-[calc(100vh-50px)]">
-      <form className="bg-neutral-950 p-8 rounded-[10px]">
-        <p className="text-4xl font-semibold text-text-secondary mb-8">
+    <section className="flex flex-col items-center justify-center -mt-10 h-[calc(100vh-50px)]">
+      <form className="bg-neutral-950 p-[28px] rounded-[10px] w-[400px]">
+        <p className="text-4xl font-semibold text-text-secondary mb-[25px]">
           {formTitle}
         </p>
         {children}
