@@ -1,5 +1,5 @@
 import React from "react";
-import { SolvexSidebar } from "../components";
+import { SolvexSidebar } from "../../components";
 
 const SolveX: React.FC = () => {
   return (

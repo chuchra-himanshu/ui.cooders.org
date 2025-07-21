@@ -1,6 +1,6 @@
 import React from "react";
-import { StudioSidebar } from "../components";
-import { BuilderButton } from "../elements";
+import { StudioSidebar } from "../../components";
+import { BuilderButton } from "../../elements";
 
 const Studio: React.FC = () => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import { MockapiSidebar } from "../components";
+import { MockapiSidebar } from "../../components";
 
 const MockAPI: React.FC = () => {
   return (

@@ -5,7 +5,7 @@ import {
   OTPInput,
   SubmitButton,
   TextInput,
-} from "../components";
+} from "../../components";
 
 interface ForgetPasswordFormDataInterface {
   email: string;

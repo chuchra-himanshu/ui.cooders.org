@@ -1,5 +1,5 @@
 import React from "react";
-import { NotebookSidebar } from "../components";
+import { NotebookSidebar } from "../../components";
 
 const Notebook: React.FC = () => {
   return (

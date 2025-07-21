@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, type NavigateFunction } from "react-router-dom";
-import { AuthFormContainer, SubmitButton, TextInput } from "../components";
+import { AuthFormContainer, SubmitButton, TextInput } from "../../components";
 
 interface ChangePasswordFormDataInterface {
   email: string;

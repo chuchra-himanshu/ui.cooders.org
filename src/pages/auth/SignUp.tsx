@@ -6,70 +6,71 @@ import {
   SocialAuth,
   SubmitButton,
   TextInput,
-} from "../components";
+} from "../../components";
 import { useNavigate, type NavigateFunction } from "react-router-dom";
 
-interface SignInFormDataInterface {
+interface SignUpFormDataInterface {
+  email: string;
   username: string;
   password: string;
   rememberMe: boolean;
 }
 
-const SignIn: React.FC = () => {
+const SignUp: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
 
-  const initialData: SignInFormDataInterface = {
+  const initialData: SignUpFormDataInterface = {
+    email: "",
     username: "",
     password: "",
     rememberMe: false,
   };
 
   const [formData, setFormData] =
-    useState<SignInFormDataInterface>(initialData);
+    useState<SignUpFormDataInterface>(initialData);
 
   const handleCheckboxChange = () => {
     setFormData((prev) => ({ ...prev, ["rememberMe"]: !prev.rememberMe }));
   };
 
   return (
-    <AuthFormContainer formTitle="Sign In">
+    <AuthFormContainer formTitle="Sign Up">
       <TextInput
-        id="signin-username"
+        id="signup-email"
+        inputType="email"
+        label="Email Address"
+        required={true}
+      />
+      <TextInput
+        id="signup-username"
         inputType="text"
         label="Username"
         required={true}
       />
       <TextInput
-        id="signin-password"
+        id="signup-password"
         inputType="password"
         label="Password"
         required={true}
       />
       <section className="pt-1">
-        <section className="flex items-center justify-between w-full h-[24px] mb-[18px]">
+        <section className="flex items-center justify-between w-full h-[24px] mb-[20px]">
           <CheckboxInput
-            id="signin-rememberme"
+            id="signup-rememberme"
             label="Remember Me"
             handleCheckboxClick={handleCheckboxChange}
             checkboxClickStatus={formData.rememberMe}
           />
-          <button
-            type="button"
-            onClick={() => navigate("/forgot-password")}
-            className="text-text-secondary hover:text-accent text-[17px] font-medium transition-all duration-200 mt-[1.5px] cursor-pointer"
-          >
-            Forgot Password
-          </button>
+          <p className=" text-text-secondary text-[17px] font-medium transition-all duration-200 text-center mt-[1.5px]">
+            {"if(isMember) "}
+            <span
+              className="hover:text-accent cursor-pointer"
+              onClick={() => navigate("/signin")}
+            >
+              {"SignIn()"}
+            </span>
+          </p>
         </section>
-        <p className="mb-[20px] text-text-secondary text-[17px] font-medium transition-all duration-200 text-center">
-          {"if(!isMember) "}
-          <span
-            className="hover:text-accent cursor-pointer"
-            onClick={() => navigate("/signup")}
-          >
-            {"SignUp()"}
-          </span>
-        </p>
       </section>
       <SubmitButton label="Submit" />
       <FormDivider />
@@ -78,4 +79,4 @@ const SignIn: React.FC = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;

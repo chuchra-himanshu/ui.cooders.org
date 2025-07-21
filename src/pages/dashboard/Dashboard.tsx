@@ -1,5 +1,5 @@
 import React from "react";
-import { DashboardSidebar } from "../components";
+import { DashboardSidebar } from "../../components";
 
 const Dashboard: React.FC = () => {
   return (

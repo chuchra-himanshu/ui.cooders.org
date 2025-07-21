@@ -1,5 +1,5 @@
 import React from "react";
-import { CommunitySidebar, Feed } from "../components";
+import { CommunitySidebar, Feed } from "../../components";
 import { FaPlus } from "react-icons/fa";
 
 const Community: React.FC = () => {

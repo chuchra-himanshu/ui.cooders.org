@@ -4,26 +4,26 @@ import {
   OTPInput,
   SubmitButton,
   TextInput,
-} from "../components";
+} from "../../components";
 
-interface EmailVerificationFormDataInterface {
+interface TwoFactorAuthenticationFormDataInterface {
   email: string;
   otp: string;
 }
 
-const EmailVerification: React.FC = () => {
-  const initialData: EmailVerificationFormDataInterface = {
+const TwoFactorAuthentication: React.FC = () => {
+  const initialData: TwoFactorAuthenticationFormDataInterface = {
     email: "",
     otp: "",
   };
 
   const [formData, setFormData] =
-    useState<EmailVerificationFormDataInterface>(initialData);
+    useState<TwoFactorAuthenticationFormDataInterface>(initialData);
 
   return (
-    <AuthFormContainer formTitle="verify(email)">
+    <AuthFormContainer formTitle="2FA">
       <TextInput
-        id="emailverification-email"
+        id="tfa-email"
         inputType="text"
         label="Email Address"
         required={true}
@@ -36,4 +36,4 @@ const EmailVerification: React.FC = () => {
   );
 };
 
-export default EmailVerification;
+export default TwoFactorAuthentication;
