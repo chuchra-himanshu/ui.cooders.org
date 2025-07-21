@@ -23,6 +23,10 @@ const NAVBAR_ITEMS = [
     title: "MOCKAPI",
     slug: "/mockapi",
   },
+  {
+    title: "ADMIN",
+    slug: "/admin",
+  },
 ];
 
 export default {

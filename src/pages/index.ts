@@ -26,6 +26,15 @@ import Notebook from "./notebook/Notebook";
 // MOCKAPI
 import MockAPI from "./mockapi/MockAPI";
 
+// ADMIN
+import Admin from "./admin/Admin";
+import AdminAuthentication from "./admin/AdminAuthentication";
+import AdminStudio from "./admin/AdminStudio";
+import AdminCommunity from "./admin/AdminCommunity";
+import AdminSolveX from "./admin/AdminSolveX";
+import AdminNotebook from "./admin/AdminNotebook";
+import AdminMockAPI from "./admin/AdminMockAPI";
+
 export {
   Dashboard,
   Studio,
@@ -41,4 +50,11 @@ export {
   MockAPI,
   Kanban,
   Calendar,
+  Admin,
+  AdminAuthentication,
+  AdminStudio,
+  AdminCommunity,
+  AdminSolveX,
+  AdminNotebook,
+  AdminMockAPI,
 };

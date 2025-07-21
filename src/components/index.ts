@@ -30,6 +30,9 @@ import SocialAuth from "./auth/SocialAuth";
 import CheckboxInput from "./auth/CheckboxInput";
 import OTPInput from "./auth/OTPInput";
 
+// ADMIN
+import AdminSidebar from "./admin/AdminSidebar";
+
 export {
   Header,
   Footer,
@@ -47,4 +50,5 @@ export {
   SolvexSidebar,
   NotebookSidebar,
   MockapiSidebar,
+  AdminSidebar,
 };

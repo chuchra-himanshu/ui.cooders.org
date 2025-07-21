@@ -17,7 +17,7 @@ const SidebarToggleButton: React.FC<SidebarToggleButtonPropsInterface> = ({
 
   return (
     <section
-      className="absolute top-1/2 -right-5 flex items-center justify-center bg-accent/15 rounded-full h-[38px] w-[38px] cursor-pointer hover:bg-accent/10 ease-in-out transition-all duration-200 opacity-30 hover:opacity-100"
+      className="absolute top-1/2 -mt-5 -right-5 flex items-center justify-center bg-accent/15 rounded-full h-[38px] w-[38px] cursor-pointer hover:bg-accent/10 ease-in-out transition-all duration-200 opacity-30 hover:opacity-100"
       onClick={() => setToggleSidebar(!toggleSidebar)}
       aria-label="Toggle Sidebar"
     >

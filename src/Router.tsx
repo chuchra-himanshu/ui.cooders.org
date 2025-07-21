@@ -1,7 +1,19 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { AuthLayout, DashboardLayout, GlobalLayout } from "./layouts";
 import {
+  AdminLayout,
+  AuthLayout,
+  DashboardLayout,
+  GlobalLayout,
+} from "./layouts";
+import {
+  Admin,
+  AdminAuthentication,
+  AdminCommunity,
+  AdminMockAPI,
+  AdminNotebook,
+  AdminSolveX,
+  AdminStudio,
   Calendar,
   ChangePassword,
   Community,
@@ -33,6 +45,15 @@ const Router: React.FC = () => {
           <Route path="solvex" Component={SolveX} />
           <Route path="notebook" Component={Notebook} />
           <Route path="mockapi" Component={MockAPI} />
+          <Route path="admin" Component={AdminLayout}>
+            <Route path="" Component={Admin} />
+            <Route path="auth" Component={AdminAuthentication} />
+            <Route path="studio" Component={AdminStudio} />
+            <Route path="community" Component={AdminCommunity} />
+            <Route path="solvex" Component={AdminSolveX} />
+            <Route path="notebook" Component={AdminNotebook} />
+            <Route path="mockapi" Component={AdminMockAPI} />
+          </Route>
         </Route>
         <Route path="/" Component={AuthLayout}>
           <Route path="signin" Component={SignIn} />
