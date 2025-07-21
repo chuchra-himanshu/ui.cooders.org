@@ -14,8 +14,8 @@ const SIDEBAR_ITEMS = [
     icon: PiKanbanFill,
   },
   {
-    title: "Calender",
-    slug: "/calender",
+    title: "Calendar",
+    slug: "/calendar",
     icon: FaCalendarAlt,
   },
 ];

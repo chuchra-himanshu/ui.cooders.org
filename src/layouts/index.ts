@@ -1,4 +1,5 @@
 import GlobalLayout from "./GlobalLayout";
 import AuthLayout from "./AuthLayout";
+import DashboardLayout from "./DashboardLayout";
 
-export { GlobalLayout, AuthLayout };
+export { GlobalLayout, AuthLayout, DashboardLayout };
