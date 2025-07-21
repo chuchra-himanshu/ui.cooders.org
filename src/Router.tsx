@@ -2,11 +2,13 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthLayout, GlobalLayout } from "./layouts";
 import {
+  Calendar,
   ChangePassword,
   Community,
   Dashboard,
   EmailVerification,
   ForgetPassword,
+  Kanban,
   MockAPI,
   Notebook,
   SignIn,
@@ -27,6 +29,8 @@ const Router: React.FC = () => {
           <Route path="solvex" Component={SolveX} />
           <Route path="notebook" Component={Notebook} />
           <Route path="mockapi" Component={MockAPI} />
+          <Route path="kanban" Component={Kanban} />
+          <Route path="calendar" Component={Calendar} />
         </Route>
         <Route path="/" Component={AuthLayout}>
           <Route path="signin" Component={SignIn} />

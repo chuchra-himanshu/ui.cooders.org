@@ -10,6 +10,8 @@ import ChangePassword from "./ChangePassword";
 import EmailVerification from "./EmailVerification";
 import TwoFactorAuthentication from "./TwoFactorAuthentication";
 import MockAPI from "./MockAPI";
+import Kanban from "./Kanban";
+import Calendar from "./Calendar";
 
 export {
   Dashboard,
@@ -24,4 +26,6 @@ export {
   EmailVerification,
   TwoFactorAuthentication,
   MockAPI,
+  Kanban,
+  Calendar,
 };
