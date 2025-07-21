@@ -29,10 +29,10 @@ const Router: React.FC = () => {
         <Route path="/" Component={AuthLayout}>
           <Route path="signin" Component={SignIn} />
           <Route path="signup" Component={SignUp} />
-          <Route path="forgets/password" Component={ForgetPassword} />
-          <Route path="updates/password" Component={ChangePassword} />
-          <Route path="validates/email" Component={EmailVerification} />
-          <Route path="validates/tfa" Component={TwoFactorAuthentication} />
+          <Route path="forgot-password" Component={ForgetPassword} />
+          <Route path="change-password" Component={ChangePassword} />
+          <Route path="verify-email" Component={EmailVerification} />
+          <Route path="2fa" Component={TwoFactorAuthentication} />
         </Route>
       </Routes>
     </BrowserRouter>

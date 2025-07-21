@@ -9,6 +9,9 @@ import StudioSidebar from "./studio/StudioSidebar";
 import CommunitySidebar from "./community/CommunitySidebar";
 import Feed from "./community/Feed";
 
+// DASHBOARD
+import DashboardSidebar from "./dashboard/DashboardSidebar";
+
 // AUTH
 import AuthFormContainer from "./auth/AuthFormContainer";
 import TextInput from "./auth/TextInput";
@@ -31,4 +34,5 @@ export {
   SocialAuth,
   CheckboxInput,
   OTPInput,
+  DashboardSidebar,
 };

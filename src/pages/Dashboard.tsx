@@ -1,7 +1,12 @@
 import React from "react";
+import { DashboardSidebar } from "../components";
 
 const Dashboard: React.FC = () => {
-  return <div className="text-white">Dashboard - KANBAN</div>;
+  return (
+    <section className="flex relative w-screen">
+      <DashboardSidebar />
+    </section>
+  );
 };
 
 export default Dashboard;
