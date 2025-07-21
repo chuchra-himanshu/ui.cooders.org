@@ -7,6 +7,7 @@ import {
   Dashboard,
   EmailVerification,
   ForgetPassword,
+  MockAPI,
   Notebook,
   SignIn,
   SignUp,
@@ -25,6 +26,7 @@ const Router: React.FC = () => {
           <Route path="community" Component={Community} />
           <Route path="solvex" Component={SolveX} />
           <Route path="notebook" Component={Notebook} />
+          <Route path="mockapi" Component={MockAPI} />
         </Route>
         <Route path="/" Component={AuthLayout}>
           <Route path="signin" Component={SignIn} />

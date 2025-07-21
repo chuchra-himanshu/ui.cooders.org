@@ -21,7 +21,7 @@ const NAVBAR_ITEMS = [
   },
   {
     title: "MOCKAPI",
-    slug: "/notebook",
+    slug: "/mockapi",
   },
 ];
 

@@ -2,6 +2,9 @@
 import Header from "./global/Header";
 import Footer from "./global/Footer";
 
+// DASHBOARD
+import DashboardSidebar from "./dashboard/DashboardSidebar";
+
 // STUDIO
 import StudioSidebar from "./studio/StudioSidebar";
 
@@ -9,8 +12,14 @@ import StudioSidebar from "./studio/StudioSidebar";
 import CommunitySidebar from "./community/CommunitySidebar";
 import Feed from "./community/Feed";
 
-// DASHBOARD
-import DashboardSidebar from "./dashboard/DashboardSidebar";
+// SOLVEX
+import SolvexSidebar from "./solvex/SolvexSidebar";
+
+// NOTEBOOK
+import NotebookSidebar from "./notebook/NotebookSidebar";
+
+// MOCKAPI
+import MockapiSidebar from "./mockapi/MockapiSidebar";
 
 // AUTH
 import AuthFormContainer from "./auth/AuthFormContainer";
@@ -35,4 +44,7 @@ export {
   CheckboxInput,
   OTPInput,
   DashboardSidebar,
+  SolvexSidebar,
+  NotebookSidebar,
+  MockapiSidebar,
 };

@@ -9,6 +9,7 @@ import ForgetPassword from "./ForgetPassword";
 import ChangePassword from "./ChangePassword";
 import EmailVerification from "./EmailVerification";
 import TwoFactorAuthentication from "./TwoFactorAuthentication";
+import MockAPI from "./MockAPI";
 
 export {
   Dashboard,
@@ -22,4 +23,5 @@ export {
   ChangePassword,
   EmailVerification,
   TwoFactorAuthentication,
+  MockAPI,
 };
