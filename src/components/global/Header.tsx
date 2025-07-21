@@ -7,13 +7,13 @@ import {
   type Location,
   type NavigateFunction,
 } from "react-router-dom";
-import { HEADER } from "../../data";
+import { GLOBAL_DATA } from "../../data";
 import { FaHamburger } from "react-icons/fa";
 
 const Header: React.FC = () => {
   const location: Location = useLocation();
   const navigate: NavigateFunction = useNavigate();
-  const navItems = useMemo(() => HEADER.NAVBAR_ITEMS || [], []);
+  const navItems = useMemo(() => GLOBAL_DATA.NAVBAR_ITEMS || [], []);
 
   const handleAvatarClick = () => {
     navigate("/signin");

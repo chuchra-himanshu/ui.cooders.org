@@ -25,6 +25,6 @@ const NAVBAR_ITEMS = [
   },
 ];
 
-export const HEADER = {
+export default {
   NAVBAR_ITEMS,
 };

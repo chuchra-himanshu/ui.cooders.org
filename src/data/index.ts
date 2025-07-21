@@ -1,4 +1,4 @@
-import { HEADER } from "./global.data";
+import GLOBAL_DATA from "./global.data";
 import DASHBOARD_DATA from "./dashboard.data";
 
-export { HEADER, DASHBOARD_DATA };
+export { GLOBAL_DATA, DASHBOARD_DATA };
