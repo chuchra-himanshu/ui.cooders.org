@@ -1,9 +1,5 @@
-import React, { useCallback, useState, type ReactNode } from "react";
+import React, { useCallback, useState } from "react";
 import { SidebarToggleButton } from "../../elements";
-
-interface SidebarPropsInterface {
-  children: ReactNode;
-}
 
 const Sidebar: React.FC<SidebarPropsInterface> = ({ children }) => {
   const [toggleSidebar, setToggleSidebar] = useState(true);

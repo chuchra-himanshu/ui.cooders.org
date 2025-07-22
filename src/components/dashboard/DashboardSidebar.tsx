@@ -2,10 +2,10 @@ import React from "react";
 import Sidebar from "../global/Sidebar";
 import SidebarRowItem from "../global/SidebarRowItem";
 import { DASHBOARD_DATA } from "../../data";
-import { useLocation } from "react-router-dom";
+import { useLocation, type Location } from "react-router-dom";
 
 const DashboardSidebar: React.FC = () => {
-  const location = useLocation();
+  const location: Location = useLocation();
 
   return (
     <Sidebar>

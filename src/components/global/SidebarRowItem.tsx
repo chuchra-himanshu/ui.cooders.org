@@ -1,14 +1,5 @@
 import React from "react";
-import type { IconType } from "react-icons";
 import { useNavigate } from "react-router-dom";
-
-interface SidebarRowItemPropsInterface {
-  title: string;
-  Icon: IconType;
-  iconSize?: number;
-  isSelected?: boolean;
-  slug: string;
-}
 
 const SidebarRowItem: React.FC<SidebarRowItemPropsInterface> = ({
   title,

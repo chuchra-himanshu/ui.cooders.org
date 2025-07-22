@@ -1,6 +1,7 @@
 // GLOBAL
 import Header from "./global/Header";
 import Footer from "./global/Footer";
+import Dialog from "./global/Dialog";
 
 // DASHBOARD
 import DashboardSidebar from "./dashboard/DashboardSidebar";
@@ -51,4 +52,5 @@ export {
   NotebookSidebar,
   MockapiSidebar,
   AdminSidebar,
+  Dialog,
 };
