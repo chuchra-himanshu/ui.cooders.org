@@ -11,6 +11,5 @@ interface SidebarRowItemPropsInterface {
 }
 
 interface DialogPropsInterface {
-  handleDialogClose: () => void;
   children: ReactNode;
 }
