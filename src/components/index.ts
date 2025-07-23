@@ -24,7 +24,6 @@ import MockapiSidebar from "./mockapi/MockapiSidebar";
 
 // AUTH
 import AuthFormContainer from "./auth/AuthFormContainer";
-import TextInput from "./auth/TextInput";
 import SubmitButton from "./auth/SubmitButton";
 import FormDivider from "./auth/FormDivider";
 import SocialAuth from "./auth/SocialAuth";
@@ -33,7 +32,9 @@ import OTPInput from "./auth/OTPInput";
 
 // ADMIN
 import AdminSidebar from "./admin/AdminSidebar";
-import TextInputField from "./admin/TextInputField";
+
+// FORM
+import TextInput from "./form/TextInput";
 
 export {
   Header,
@@ -54,5 +55,4 @@ export {
   MockapiSidebar,
   AdminSidebar,
   Dialog,
-  TextInputField,
 };

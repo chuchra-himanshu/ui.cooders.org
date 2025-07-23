@@ -5,6 +5,7 @@ const TextInput: React.FC<TextInputPropsInterface> = ({
   inputType,
   label,
   required,
+  placeholder,
 }) => {
   return (
     <div className="flex flex-col text-text-secondary font-medium focus-within:text-accent gap-1 transition-all ease-in-out duration-200 mb-[14px]">
@@ -15,6 +16,7 @@ const TextInput: React.FC<TextInputPropsInterface> = ({
       <input
         type={inputType}
         id={id}
+        placeholder={placeholder}
         className="outline-none w-full rounded-[10px] px-3 py-2 border-2 border-border-primary focus:text-text-primary focus:border-accent transition-all ease-in-out duration-200"
       />
     </div>

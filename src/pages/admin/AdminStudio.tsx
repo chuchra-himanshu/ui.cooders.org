@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { FaPlus } from "react-icons/fa";
-import { Dialog, TextInputField } from "../../components";
+import { Dialog, TextInput } from "../../components";
 
 const AdminStudio: React.FC = () => {
   const [toggleDialog, setToggleDialog] = useState(false);
@@ -26,20 +26,26 @@ const AdminStudio: React.FC = () => {
       {toggleDialog && (
         <Dialog heading="Create Library" handleDialogClose={handleDialogClose}>
           <form>
-            <TextInputField
+            <TextInput
               id="library-title"
               label="Title"
               placeholder="Library Name"
+              inputType="text"
+              required={true}
             />
-            <TextInputField
+            <TextInput
               id="library-url"
               label="URL"
               placeholder="Library Official URL"
+              inputType="text"
+              required={true}
             />
-            <TextInputField
+            <TextInput
               id="library-logo"
               label="Logo"
               placeholder="Choose from Simple Icons"
+              inputType="text"
+              required={true}
             />
 
             <div className="flex justify-end mt-5">

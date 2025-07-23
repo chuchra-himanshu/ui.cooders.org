@@ -18,10 +18,3 @@ interface SubmitButtonPropsInterface {
   label: string;
   includeBottomMargin?: boolean;
 }
-
-interface TextInputPropsInterface {
-  id: string;
-  label: string;
-  required: boolean;
-  inputType: string;
-}
