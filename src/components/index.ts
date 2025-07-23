@@ -33,6 +33,7 @@ import OTPInput from "./auth/OTPInput";
 
 // ADMIN
 import AdminSidebar from "./admin/AdminSidebar";
+import TextInputField from "./admin/TextInputField";
 
 export {
   Header,
@@ -53,4 +54,5 @@ export {
   MockapiSidebar,
   AdminSidebar,
   Dialog,
+  TextInputField,
 };
