@@ -28,9 +28,53 @@ const AdminStudio: React.FC = () => {
           <FaPlus />
           <span className="font-semibold -mt-[1.1px]">Add Component</span>
         </button>
+        <button
+          onClick={handleDialogOpen}
+          className="h-[42px] px-4 bg-overlay-primary text-text-secondary hover:bg-accent/5 hover:text-accent flex items-center rounded-[10px] gap-2 cursor-pointer transition-all ease-in-out duration-200"
+        >
+          <FaPlus />
+          <span className="font-semibold -mt-[1.1px]">Add Prop</span>
+        </button>
       </header>
 
       {toggleDialog && (
+        <Dialog heading="Create Prop" handleDialogClose={handleDialogClose}>
+          <form>
+            <TextInput
+              id="prop-name"
+              label="Name"
+              placeholder="Prop Name"
+              inputType="text"
+              required={true}
+            />
+            <TextInput
+              id="prop-default-value"
+              label="Default Value"
+              placeholder="Enter Default Value (If any)"
+              inputType="text"
+              required={false}
+            />
+            <TextInput
+              id="prop-input-type"
+              label="Input Type"
+              placeholder="Choose from Simple Icons"
+              inputType="text"
+              required={true}
+            />
+
+            <div className="flex justify-end mt-5">
+              <button
+                type="submit"
+                className="cursor-pointer font-medium outline-none rounded-[10px] text-text-secondary px-3 pt-[7px] pb-[9px] border-2 border-border-primary hover:text-text-primary hover:border-accent transition-all ease-in-out duration-200"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </Dialog>
+      )}
+
+      {/* {toggleDialog && (
         <Dialog
           heading="Create Component"
           handleDialogClose={handleDialogClose}
@@ -61,7 +105,7 @@ const AdminStudio: React.FC = () => {
             </div>
           </form>
         </Dialog>
-      )}
+      )} */}
 
       {/* {toggleDialog && (
         <Dialog heading="Create Library" handleDialogClose={handleDialogClose}>
