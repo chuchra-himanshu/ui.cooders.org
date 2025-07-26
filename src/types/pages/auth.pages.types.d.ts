@@ -20,3 +20,9 @@ interface EmailVerificationFormDataInterface {
   email: string;
   otp: string;
 }
+
+interface ChangePasswordFormDataInterface {
+  email: string;
+  password: string;
+  confirmPassword: string;
+}

@@ -1,12 +1,6 @@
-import React, { useState } from "react";
+import React, { useCallback, useState, type FormEvent } from "react";
 import { useNavigate, type NavigateFunction } from "react-router-dom";
 import { AuthFormContainer, SubmitButton, TextInput } from "../../components";
-
-interface ChangePasswordFormDataInterface {
-  email: string;
-  password: string;
-  confirmPassword: string;
-}
 
 const ChangePassword: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
@@ -20,25 +14,52 @@ const ChangePassword: React.FC = () => {
   const [formData, setFormData] =
     useState<ChangePasswordFormDataInterface>(initialData);
 
+  const handleInputChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setFormData((prevData) => ({
+        ...prevData,
+        [e.target.name]: e.target.value,
+      }));
+    },
+    []
+  );
+
+  const handleFormSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  }, []);
+
   return (
-    <AuthFormContainer formTitle="$ reset --pwd">
+    <AuthFormContainer
+      formTitle="$ reset --pwd"
+      handleFormSubmit={handleFormSubmit}
+    >
       <TextInput
         id="changepassword-email"
-        inputType="text"
+        inputType="email"
         label="Email Address"
         required={true}
+        name="email"
+        value={formData.email}
+        disabled={true}
+        handleInputChange={handleInputChange}
       />
       <TextInput
         id="changepassword-password"
         inputType="password"
         label="Password"
+        name="password"
+        value={formData.password}
         required={true}
+        handleInputChange={handleInputChange}
       />
       <TextInput
         id="changepassword-confirmpassword"
         inputType="password"
         label="Confirm Password"
+        name="confirmPassword"
+        value={formData.confirmPassword}
         required={true}
+        handleInputChange={handleInputChange}
       />
       <section className="pt-1">
         <p className="mb-[20px] text-text-secondary text-[17px] font-medium transition-all duration-200 text-center">
