@@ -1,15 +1,10 @@
-import React, { useState } from "react";
+import React, { useCallback, useState, type FormEvent } from "react";
 import {
   AuthFormContainer,
   OTPInput,
   SubmitButton,
   TextInput,
 } from "../../components";
-
-interface TwoFactorAuthenticationFormDataInterface {
-  email: string;
-  otp: string;
-}
 
 const TwoFactorAuthentication: React.FC = () => {
   const initialData: TwoFactorAuthenticationFormDataInterface = {
@@ -20,13 +15,31 @@ const TwoFactorAuthentication: React.FC = () => {
   const [formData, setFormData] =
     useState<TwoFactorAuthenticationFormDataInterface>(initialData);
 
+  const handleInputChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setFormData((prevData) => ({
+        ...prevData,
+        [e.target.name]: e.target.value,
+      }));
+    },
+    []
+  );
+
+  const handleFormSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  }, []);
+
   return (
-    <AuthFormContainer formTitle="2FA">
+    <AuthFormContainer formTitle="2FA" handleFormSubmit={handleFormSubmit}>
       <TextInput
         id="tfa-email"
-        inputType="text"
+        inputType="email"
         label="Email Address"
         required={true}
+        name="email"
+        value={formData.email}
+        disabled={true}
+        handleInputChange={handleInputChange}
       />
       <OTPInput />
       <section className="mt-[22px]">

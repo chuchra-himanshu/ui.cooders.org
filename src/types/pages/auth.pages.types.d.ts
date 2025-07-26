@@ -26,3 +26,8 @@ interface ChangePasswordFormDataInterface {
   password: string;
   confirmPassword: string;
 }
+
+interface TwoFactorAuthenticationFormDataInterface {
+  email: string;
+  otp: string;
+}
