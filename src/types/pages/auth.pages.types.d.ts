@@ -10,3 +10,13 @@ interface SignInFormDataInterface {
   password: string;
   rememberMe: boolean;
 }
+
+interface ForgetPasswordFormDataInterface {
+  email: string;
+  otp: string;
+}
+
+interface EmailVerificationFormDataInterface {
+  email: string;
+  otp: string;
+}

@@ -7,11 +7,6 @@ import {
   TextInput,
 } from "../../components";
 
-interface ForgetPasswordFormDataInterface {
-  email: string;
-  otp: string;
-}
-
 const ForgetPassword: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
 
