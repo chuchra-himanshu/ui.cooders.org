@@ -1,4 +1,4 @@
-import React, { useState, type FormEvent } from "react";
+import React, { useCallback, useState, type FormEvent } from "react";
 import {
   AuthFormContainer,
   CheckboxInput,
@@ -22,20 +22,35 @@ const SignUp: React.FC = () => {
   const [formData, setFormData] =
     useState<SignUpFormDataInterface>(initialData);
 
-  const handleCheckboxChange = () => {
-    setFormData((prev) => ({ ...prev, ["rememberMe"]: !prev.rememberMe }));
-  };
+  const handleCheckboxChange = useCallback(() => {
+    setFormData((prev) => ({ ...prev, rememberMe: !prev.rememberMe }));
+  }, []);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      [e.target.name]: e.target.value,
-    }));
-  };
+  const handleInputChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setFormData((prevData) => ({
+        ...prevData,
+        [e.target.name]: e.target.value,
+      }));
+    },
+    []
+  );
 
-  const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-  };
+  }, []);
+
+  const SwitchToSignIn = () => (
+    <p className="text-text-secondary text-[17px] font-medium transition-all duration-200 text-center mt-[1.5px]">
+      Already a member?{" "}
+      <span
+        className="hover:text-accent cursor-pointer"
+        onClick={() => navigate("/signin")}
+      >
+        Sign In
+      </span>
+    </p>
+  );
 
   return (
     <AuthFormContainer formTitle="Sign Up" handleFormSubmit={handleFormSubmit}>
@@ -74,15 +89,7 @@ const SignUp: React.FC = () => {
             handleCheckboxClick={handleCheckboxChange}
             checkboxClickStatus={formData.rememberMe}
           />
-          <p className=" text-text-secondary text-[17px] font-medium transition-all duration-200 text-center mt-[1.5px]">
-            {"if(isMember) "}
-            <span
-              className="hover:text-accent cursor-pointer"
-              onClick={() => navigate("/signin")}
-            >
-              {"SignIn()"}
-            </span>
-          </p>
+          <SwitchToSignIn />
         </section>
       </section>
       <SubmitButton label="Submit" />
