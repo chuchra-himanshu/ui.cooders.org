@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, type FormEvent } from "react";
 import {
   AuthFormContainer,
   CheckboxInput,
@@ -8,13 +8,6 @@ import {
   TextInput,
 } from "../../components";
 import { useNavigate, type NavigateFunction } from "react-router-dom";
-
-interface SignUpFormDataInterface {
-  email: string;
-  username: string;
-  password: string;
-  rememberMe: boolean;
-}
 
 const SignUp: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
@@ -33,25 +26,45 @@ const SignUp: React.FC = () => {
     setFormData((prev) => ({ ...prev, ["rememberMe"]: !prev.rememberMe }));
   };
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
+
   return (
-    <AuthFormContainer formTitle="Sign Up">
+    <AuthFormContainer formTitle="Sign Up" handleFormSubmit={handleFormSubmit}>
       <TextInput
         id="signup-email"
         inputType="email"
         label="Email Address"
         required={true}
+        name="email"
+        value={formData.email}
+        handleInputChange={handleInputChange}
       />
       <TextInput
         id="signup-username"
         inputType="text"
         label="Username"
+        name="username"
+        value={formData.username}
         required={true}
+        handleInputChange={handleInputChange}
       />
       <TextInput
         id="signup-password"
         inputType="password"
         label="Password"
+        name="password"
+        value={formData.password}
         required={true}
+        handleInputChange={handleInputChange}
       />
       <section className="pt-1">
         <section className="flex items-center justify-between w-full h-[24px] mb-[20px]">

@@ -1,6 +1,7 @@
 interface AuthFormContainerPropsInterface {
   children: ReactNode;
   formTitle: string;
+  handleFormSubmit: (e: FormEvent<HTMLFormElement>) => void;
 }
 
 interface CheckboxInputPropsInterface {
