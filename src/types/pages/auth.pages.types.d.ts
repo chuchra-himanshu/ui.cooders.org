@@ -4,3 +4,9 @@ interface SignUpFormDataInterface {
   password: string;
   rememberMe: boolean;
 }
+
+interface SignInFormDataInterface {
+  username: string;
+  password: string;
+  rememberMe: boolean;
+}

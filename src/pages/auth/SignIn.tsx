@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState, type FormEvent } from "react";
 import {
   AuthFormContainer,
   CheckboxInput,
@@ -8,12 +8,6 @@ import {
   TextInput,
 } from "../../components";
 import { useNavigate, type NavigateFunction } from "react-router-dom";
-
-interface SignInFormDataInterface {
-  username: string;
-  password: string;
-  rememberMe: boolean;
-}
 
 const SignIn: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
@@ -27,23 +21,55 @@ const SignIn: React.FC = () => {
   const [formData, setFormData] =
     useState<SignInFormDataInterface>(initialData);
 
-  const handleCheckboxChange = () => {
-    setFormData((prev) => ({ ...prev, ["rememberMe"]: !prev.rememberMe }));
-  };
+  const handleCheckboxChange = useCallback(() => {
+    setFormData((prev) => ({ ...prev, rememberMe: !prev.rememberMe }));
+  }, []);
+
+  const handleInputChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setFormData((prevData) => ({
+        ...prevData,
+        [e.target.name]: e.target.value,
+      }));
+    },
+    []
+  );
+
+  const handleFormSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  }, []);
+
+  const SwitchToSignUp = () => (
+    <p className="mb-[20px] text-text-secondary text-[17px] font-medium transition-all duration-200 text-center">
+      {"if(!isMember) "}
+      <span
+        className="hover:text-accent cursor-pointer"
+        onClick={() => navigate("/signup")}
+      >
+        {"SignUp()"}
+      </span>
+    </p>
+  );
 
   return (
-    <AuthFormContainer formTitle="Sign In">
+    <AuthFormContainer formTitle="Sign In" handleFormSubmit={handleFormSubmit}>
       <TextInput
         id="signin-username"
         inputType="text"
         label="Username"
+        name="username"
+        value={formData.username}
         required={true}
+        handleInputChange={handleInputChange}
       />
       <TextInput
         id="signin-password"
         inputType="password"
         label="Password"
+        name="password"
+        value={formData.password}
         required={true}
+        handleInputChange={handleInputChange}
       />
       <section className="pt-1">
         <section className="flex items-center justify-between w-full h-[24px] mb-[18px]">
@@ -61,15 +87,7 @@ const SignIn: React.FC = () => {
             Forgot Password
           </button>
         </section>
-        <p className="mb-[20px] text-text-secondary text-[17px] font-medium transition-all duration-200 text-center">
-          {"if(!isMember) "}
-          <span
-            className="hover:text-accent cursor-pointer"
-            onClick={() => navigate("/signup")}
-          >
-            {"SignUp()"}
-          </span>
-        </p>
+        <SwitchToSignUp />
       </section>
       <SubmitButton label="Submit" />
       <FormDivider />
