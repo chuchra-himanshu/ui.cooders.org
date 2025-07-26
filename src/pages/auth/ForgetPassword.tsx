@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState, type FormEvent } from "react";
 import { useNavigate, type NavigateFunction } from "react-router-dom";
 import {
   AuthFormContainer,
@@ -23,26 +23,50 @@ const ForgetPassword: React.FC = () => {
   const [formData, setFormData] =
     useState<ForgetPasswordFormDataInterface>(initialData);
 
+  const handleInputChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setFormData((prevData) => ({
+        ...prevData,
+        [e.target.name]: e.target.value,
+      }));
+    },
+    []
+  );
+
+  const handleFormSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  }, []);
+
+  const SwitchToSignIn = () => (
+    <section className="pt-1">
+      <p className="mb-[20px] text-text-secondary text-[17px] font-medium transition-all duration-200 text-center">
+        {"if(rememberPassword) "}
+        <span
+          className="hover:text-accent cursor-pointer"
+          onClick={() => navigate("/signin")}
+        >
+          {"SignIn()"}
+        </span>
+      </p>
+    </section>
+  );
+
   return (
-    <AuthFormContainer formTitle="forgot(pwd)">
+    <AuthFormContainer
+      formTitle="forgot(pwd)"
+      handleFormSubmit={handleFormSubmit}
+    >
       <TextInput
         id="forgetpassword-email"
-        inputType="text"
+        inputType="email"
         label="Email Address"
         required={true}
+        name="email"
+        value={formData.email}
+        handleInputChange={handleInputChange}
       />
       <OTPInput />
-      <section className="pt-1">
-        <p className="mb-[20px] text-text-secondary text-[17px] font-medium transition-all duration-200 text-center">
-          {"if(rememberPassword) "}
-          <span
-            className="hover:text-accent cursor-pointer"
-            onClick={() => navigate("/signin")}
-          >
-            {"SignIn()"}
-          </span>
-        </p>
-      </section>
+      <SwitchToSignIn />
       <SubmitButton label="Submit" includeBottomMargin={false} />
     </AuthFormContainer>
   );
