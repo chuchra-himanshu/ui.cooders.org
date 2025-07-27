@@ -9,6 +9,7 @@ import {
   TextInput,
 } from "../../components";
 import { useNavigate, type NavigateFunction } from "react-router-dom";
+import { HELPER_UTILITY } from "../../utils";
 
 const SignUp: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
@@ -40,6 +41,11 @@ const SignUp: React.FC = () => {
   const handleFormSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   }, []);
+
+  const generateRandomPassword = () => {
+    const randomPassword = HELPER_UTILITY.GENERATE_RANDOM_PASSWORD();
+    setFormData((prev) => ({ ...prev, password: randomPassword }));
+  };
 
   const SwitchToSignIn = () => (
     <p className="text-text-secondary text-[17px] font-medium transition-all duration-200 text-center">
@@ -80,6 +86,7 @@ const SignUp: React.FC = () => {
         value={formData.password}
         required={true}
         handleInputChange={handleInputChange}
+        generateRandomPassword={generateRandomPassword}
       />
       <section className="pt-1">
         <section className="flex items-center justify-between w-full h-[24px] mb-[20px]">

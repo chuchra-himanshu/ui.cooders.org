@@ -19,4 +19,5 @@ interface PasswordInputPropsInterface {
   value: string;
   disabled?: boolean;
   handleInputChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  generateRandomPassword?: () => void;
 }

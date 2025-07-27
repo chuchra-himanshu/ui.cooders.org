@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
+import { RiKey2Line } from "react-icons/ri";
 
 const PasswordInput: React.FC<PasswordInputPropsInterface> = ({
   id,
@@ -10,6 +11,7 @@ const PasswordInput: React.FC<PasswordInputPropsInterface> = ({
   disabled = false,
   handleInputChange,
   placeholder = "",
+  generateRandomPassword,
 }) => {
   const [showPassword, setShowPassword] = useState(false);
   const togglePasswordVisibility = () => setShowPassword((prev) => !prev);
@@ -33,12 +35,21 @@ const PasswordInput: React.FC<PasswordInputPropsInterface> = ({
           disabled={disabled}
           className="w-full pr-10 px-3 py-2 border-2 rounded-[10px] outline-none border-border-primary focus:border-accent focus:text-text-primary transition-all duration-200 ease-in-out"
         />
-        <Icon
-          className="absolute top-[11px] right-3 cursor-pointer text-text-secondary hover:text-accent transition-all duration-200 ease-in-out"
-          size={22}
-          onClick={togglePasswordVisibility}
-          aria-label={showPassword ? "Hide password" : "Show password"}
-        />
+        <section className="flex items-center gap-1 absolute top-[11px] right-3">
+          {generateRandomPassword && (
+            <RiKey2Line
+              className="cursor-pointer text-text-secondary hover:text-accent transition-all duration-200 ease-in-out"
+              size={22}
+              onClick={generateRandomPassword}
+            />
+          )}
+          <Icon
+            className="cursor-pointer text-text-secondary hover:text-accent transition-all duration-200 ease-in-out"
+            size={22}
+            onClick={togglePasswordVisibility}
+            aria-label={showPassword ? "Hide password" : "Show password"}
+          />
+        </section>
       </div>
     </div>
   );
