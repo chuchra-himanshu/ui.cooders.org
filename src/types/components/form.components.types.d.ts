@@ -8,6 +8,7 @@ interface TextInputPropsInterface {
   value: string;
   disabled?: boolean;
   handleInputChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  Icon: IconType;
 }
 
 interface PasswordInputPropsInterface {

@@ -5,6 +5,7 @@ import {
   SubmitButton,
   TextInput,
 } from "../../components";
+import { MdOutlineMail } from "react-icons/md";
 
 const TwoFactorAuthentication: React.FC = () => {
   const initialData: TwoFactorAuthenticationFormDataInterface = {
@@ -40,6 +41,7 @@ const TwoFactorAuthentication: React.FC = () => {
         value={formData.email}
         disabled={true}
         handleInputChange={handleInputChange}
+        Icon={MdOutlineMail}
       />
       <OTPInput />
       <section className="mt-[22px]">

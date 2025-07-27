@@ -6,6 +6,7 @@ import {
   SubmitButton,
   TextInput,
 } from "../../components";
+import { MdOutlineMail } from "react-icons/md";
 
 const ForgetPassword: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
@@ -59,6 +60,7 @@ const ForgetPassword: React.FC = () => {
         name="email"
         value={formData.email}
         handleInputChange={handleInputChange}
+        Icon={MdOutlineMail}
       />
       <OTPInput />
       <SwitchToSignIn />

@@ -38,13 +38,13 @@ const PasswordInput: React.FC<PasswordInputPropsInterface> = ({
         <section className="flex items-center gap-1 absolute top-[11px] right-3">
           {generateRandomPassword && (
             <RiKey2Line
-              className="cursor-pointer text-text-secondary hover:text-accent transition-all duration-200 ease-in-out"
+              className="cursor-pointer text-text-secondary opacity-50 hover:opacity-100 hover:text-accent transition-all duration-200 ease-in-out"
               size={22}
               onClick={generateRandomPassword}
             />
           )}
           <Icon
-            className="cursor-pointer text-text-secondary hover:text-accent transition-all duration-200 ease-in-out"
+            className="cursor-pointer text-text-secondary opacity-50 hover:opacity-100 hover:text-accent transition-all duration-200 ease-in-out"
             size={22}
             onClick={togglePasswordVisibility}
             aria-label={showPassword ? "Hide password" : "Show password"}

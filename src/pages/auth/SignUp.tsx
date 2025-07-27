@@ -10,6 +10,7 @@ import {
 } from "../../components";
 import { useNavigate, type NavigateFunction } from "react-router-dom";
 import { HELPER_UTILITY } from "../../utils";
+import { MdDriveFileRenameOutline, MdOutlineMail } from "react-icons/md";
 
 const SignUp: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
@@ -69,6 +70,7 @@ const SignUp: React.FC = () => {
         name="email"
         value={formData.email}
         handleInputChange={handleInputChange}
+        Icon={MdOutlineMail}
       />
       <TextInput
         id="signup-username"
@@ -78,6 +80,7 @@ const SignUp: React.FC = () => {
         value={formData.username}
         required={true}
         handleInputChange={handleInputChange}
+        Icon={MdDriveFileRenameOutline}
       />
       <PasswordInput
         id="signup-password"

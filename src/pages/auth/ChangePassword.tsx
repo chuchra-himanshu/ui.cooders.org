@@ -6,6 +6,7 @@ import {
   SubmitButton,
   TextInput,
 } from "../../components";
+import { MdOutlineMail } from "react-icons/md";
 
 const ChangePassword: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
@@ -47,6 +48,7 @@ const ChangePassword: React.FC = () => {
         value={formData.email}
         disabled={true}
         handleInputChange={handleInputChange}
+        Icon={MdOutlineMail}
       />
       <PasswordInput
         id="changepassword-password"

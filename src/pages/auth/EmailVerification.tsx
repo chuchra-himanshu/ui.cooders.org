@@ -5,6 +5,7 @@ import {
   SubmitButton,
   TextInput,
 } from "../../components";
+import { MdOutlineMail } from "react-icons/md";
 
 const EmailVerification: React.FC = () => {
   const initialData: EmailVerificationFormDataInterface = {
@@ -42,6 +43,7 @@ const EmailVerification: React.FC = () => {
         name="email"
         value={formData.email}
         handleInputChange={handleInputChange}
+        Icon={MdOutlineMail}
       />
       <OTPInput />
       <section className="mt-[22px]">

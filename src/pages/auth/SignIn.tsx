@@ -9,6 +9,7 @@ import {
   TextInput,
 } from "../../components";
 import { useNavigate, type NavigateFunction } from "react-router-dom";
+import { MdDriveFileRenameOutline } from "react-icons/md";
 
 const SignIn: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
@@ -62,6 +63,7 @@ const SignIn: React.FC = () => {
         value={formData.username}
         required={true}
         handleInputChange={handleInputChange}
+        Icon={MdDriveFileRenameOutline}
       />
       <PasswordInput
         id="signin-password"
