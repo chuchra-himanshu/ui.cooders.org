@@ -35,6 +35,7 @@ import AdminSidebar from "./admin/AdminSidebar";
 
 // FORM
 import TextInput from "./form/TextInput";
+import PasswordInput from "./form/PasswordInput";
 
 export {
   Header,
@@ -55,4 +56,5 @@ export {
   MockapiSidebar,
   AdminSidebar,
   Dialog,
+  PasswordInput,
 };

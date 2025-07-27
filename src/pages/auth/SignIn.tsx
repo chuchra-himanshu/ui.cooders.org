@@ -3,6 +3,7 @@ import {
   AuthFormContainer,
   CheckboxInput,
   FormDivider,
+  PasswordInput,
   SocialAuth,
   SubmitButton,
   TextInput,
@@ -41,7 +42,7 @@ const SignIn: React.FC = () => {
 
   const SwitchToSignUp = () => (
     <p className="mb-[20px] text-text-secondary text-[17px] font-medium transition-all duration-200 text-center">
-      {"if(!isMember) "}
+      {"if(!member) "}
       <span
         className="hover:text-accent cursor-pointer"
         onClick={() => navigate("/signup")}
@@ -62,9 +63,8 @@ const SignIn: React.FC = () => {
         required={true}
         handleInputChange={handleInputChange}
       />
-      <TextInput
+      <PasswordInput
         id="signin-password"
-        inputType="password"
         label="Password"
         name="password"
         value={formData.password}

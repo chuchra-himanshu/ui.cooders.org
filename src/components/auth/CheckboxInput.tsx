@@ -22,7 +22,7 @@ const CheckboxInput: React.FC<CheckboxInputPropsInterface> = ({
       </button>
       <label
         htmlFor={id}
-        className="text-[17.2px] cursor-pointer select-none mt-[1.5px]"
+        className="text-[17.2px] cursor-pointer select-none"
         onClick={handleCheckboxClick}
       >
         {label}

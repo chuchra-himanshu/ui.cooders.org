@@ -1,6 +1,11 @@
 import React, { useCallback, useState, type FormEvent } from "react";
 import { useNavigate, type NavigateFunction } from "react-router-dom";
-import { AuthFormContainer, SubmitButton, TextInput } from "../../components";
+import {
+  AuthFormContainer,
+  PasswordInput,
+  SubmitButton,
+  TextInput,
+} from "../../components";
 
 const ChangePassword: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
@@ -43,18 +48,16 @@ const ChangePassword: React.FC = () => {
         disabled={true}
         handleInputChange={handleInputChange}
       />
-      <TextInput
+      <PasswordInput
         id="changepassword-password"
-        inputType="password"
         label="Password"
         name="password"
         value={formData.password}
         required={true}
         handleInputChange={handleInputChange}
       />
-      <TextInput
+      <PasswordInput
         id="changepassword-confirmpassword"
-        inputType="password"
         label="Confirm Password"
         name="confirmPassword"
         value={formData.confirmPassword}
