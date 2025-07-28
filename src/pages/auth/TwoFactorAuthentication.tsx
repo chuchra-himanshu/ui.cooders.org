@@ -36,6 +36,7 @@ const TwoFactorAuthentication: React.FC = () => {
         label="Email Address"
         required={true}
         name="email"
+        lowercase={true}
         value={formData.email}
         disabled={true}
         handleInputChange={handleInputChange}

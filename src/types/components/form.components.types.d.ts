@@ -9,6 +9,7 @@ interface TextInputPropsInterface {
   disabled?: boolean;
   handleInputChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   Icon: IconType;
+  lowercase?: boolean;
 }
 
 interface PasswordInputPropsInterface {

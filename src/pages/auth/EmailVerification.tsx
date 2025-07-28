@@ -37,6 +37,7 @@ const EmailVerification: React.FC = () => {
         inputType="email"
         label="Email Address"
         required={true}
+        lowercase={true}
         name="email"
         value={formData.email}
         handleInputChange={handleInputChange}

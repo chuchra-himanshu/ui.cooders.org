@@ -94,6 +94,7 @@ const SignUp: React.FC = () => {
         inputType="email"
         label="Email Address"
         required={true}
+        lowercase={true}
         name="email"
         value={formData.email}
         handleInputChange={handleInputChange}
@@ -108,6 +109,7 @@ const SignUp: React.FC = () => {
             name="username"
             value={formData.username}
             required={true}
+            lowercase={true}
             handleInputChange={handleInputChange}
             Icon={MdDriveFileRenameOutline}
           />

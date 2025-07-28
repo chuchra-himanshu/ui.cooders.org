@@ -53,6 +53,7 @@ const ForgetPassword: React.FC = () => {
         id="forgetpassword-email"
         inputType="email"
         label="Email Address"
+        lowercase={true}
         required={true}
         name="email"
         value={formData.email}

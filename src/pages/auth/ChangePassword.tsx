@@ -62,6 +62,7 @@ const ChangePassword: React.FC = () => {
       <TextInput
         id="changepassword-email"
         inputType="email"
+        lowercase={true}
         label="Email Address"
         required={true}
         name="email"

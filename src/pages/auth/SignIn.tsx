@@ -56,6 +56,7 @@ const SignIn: React.FC = () => {
         inputType="text"
         label="Username"
         name="username"
+        lowercase={true}
         value={formData.username}
         required={true}
         handleInputChange={handleInputChange}
