@@ -11,6 +11,8 @@ import {
 import { useNavigate, type NavigateFunction } from "react-router-dom";
 import { HELPER_UTILITY } from "../../utils";
 import { MdDriveFileRenameOutline, MdOutlineMail } from "react-icons/md";
+import { AUTH_DATA } from "../../data";
+import { FaCheckCircle } from "react-icons/fa";
 
 const SignUp: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
@@ -24,6 +26,12 @@ const SignUp: React.FC = () => {
 
   const [formData, setFormData] =
     useState<SignUpFormDataInterface>(initialData);
+  const [usernameValidations, setUsernameValidations] = useState(
+    AUTH_DATA.USERNAME_VALIDATIONS
+  );
+  const [passwordValidations, setPasswordValidations] = useState(
+    AUTH_DATA.PASSWORD_VALIDATIONS
+  );
 
   const handleCheckboxChange = useCallback(() => {
     setFormData((prev) => ({ ...prev, rememberMe: !prev.rememberMe }));
@@ -31,10 +39,29 @@ const SignUp: React.FC = () => {
 
   const handleInputChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
+      const { name, value } = e.target;
+
       setFormData((prevData) => ({
         ...prevData,
-        [e.target.name]: e.target.value,
+        [name]: value,
       }));
+
+      if (name === "username") {
+        setUsernameValidations((prevValidations) =>
+          prevValidations.map((rule) => {
+            const isValid = rule.validate(value);
+            return { ...rule, status: isValid };
+          })
+        );
+      }
+      if (name === "password") {
+        setPasswordValidations((prevValidations) =>
+          prevValidations.map((rule) => {
+            const isValid = rule.validate(value);
+            return { ...rule, status: isValid };
+          })
+        );
+      }
     },
     []
   );
@@ -72,25 +99,68 @@ const SignUp: React.FC = () => {
         handleInputChange={handleInputChange}
         Icon={MdOutlineMail}
       />
-      <TextInput
-        id="signup-username"
-        inputType="text"
-        label="Username"
-        name="username"
-        value={formData.username}
-        required={true}
-        handleInputChange={handleInputChange}
-        Icon={MdDriveFileRenameOutline}
-      />
-      <PasswordInput
-        id="signup-password"
-        label="Password"
-        name="password"
-        value={formData.password}
-        required={true}
-        handleInputChange={handleInputChange}
-        generateRandomPassword={generateRandomPassword}
-      />
+      <div className="w-full flex justify-center">
+        <div className="relative w-full max-w-md group">
+          <TextInput
+            id="signup-username"
+            inputType="text"
+            label="Username"
+            name="username"
+            value={formData.username}
+            required={true}
+            handleInputChange={handleInputChange}
+            Icon={MdDriveFileRenameOutline}
+          />
+          <div className="absolute top-0 left-full ml-12 w-[315px] bg-overlay-primary p-4 rounded-[10px] shadow-md hidden group-focus-within:block">
+            <section className="flex flex-col gap-1">
+              {usernameValidations?.map((item, index) => (
+                <div key={index} className="flex gap-3 items-center">
+                  <div
+                    className={`flex items-center justify-center bg-background-primary h-[30px] w-[30px] rounded-full cursor-pointer transition-all ease-in-out duration-200 ${
+                      item.status
+                        ? "hover:bg-green-400/5 text-green-400"
+                        : "hover:bg-red-400/5 text-red-400"
+                    }`}
+                  >
+                    <FaCheckCircle className="" size={18} />
+                  </div>
+                  <p className="text-text-primary text-sm">{item.title}</p>
+                </div>
+              ))}
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative w-full max-w-md group">
+        <PasswordInput
+          id="signup-password"
+          label="Password"
+          name="password"
+          value={formData.password}
+          required={true}
+          handleInputChange={handleInputChange}
+          generateRandomPassword={generateRandomPassword}
+        />
+        <div className="absolute top-0 left-full ml-12 w-[315px] bg-overlay-primary p-4 rounded-[10px] shadow-md hidden group-focus-within:block">
+          <section className="flex flex-col gap-1">
+            {passwordValidations?.map((item, index) => (
+              <div key={index} className="flex gap-3 items-center">
+                <div
+                  className={`flex items-center justify-center bg-background-primary h-[30px] w-[30px] rounded-full cursor-pointer transition-all ease-in-out duration-200 ${
+                    item.status
+                      ? "hover:bg-green-400/5 text-green-400"
+                      : "hover:bg-red-400/5 text-red-400"
+                  }`}
+                >
+                  <FaCheckCircle className="" size={18} />
+                </div>
+                <p className="text-text-primary text-sm">{item.title}</p>
+              </div>
+            ))}
+          </section>
+        </div>
+      </div>
       <section className="pt-1">
         <section className="flex items-center justify-between w-full h-[24px] mb-[20px]">
           <CheckboxInput

@@ -33,6 +33,8 @@ const PasswordInput: React.FC<PasswordInputPropsInterface> = ({
           placeholder={placeholder}
           onChange={handleInputChange}
           disabled={disabled}
+          autoCapitalize="off"
+          autoComplete="off"
           className="w-full pr-10 px-3 py-2 border-2 rounded-[10px] outline-none border-border-primary focus:border-accent focus:text-text-primary transition-all duration-200 ease-in-out"
         />
         <section className="flex items-center gap-1 absolute top-[11px] right-3">

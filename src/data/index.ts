@@ -1,5 +1,6 @@
 import GLOBAL_DATA from "./global.data";
 import DASHBOARD_DATA from "./dashboard.data";
 import ADMIN_DATA from "./admin.data";
+import AUTH_DATA from "./auth.data";
 
-export { GLOBAL_DATA, DASHBOARD_DATA, ADMIN_DATA };
+export { GLOBAL_DATA, DASHBOARD_DATA, ADMIN_DATA, AUTH_DATA };
