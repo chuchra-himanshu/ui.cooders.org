@@ -13,6 +13,7 @@ const TwoFactorAuthentication: React.FC = () => {
     useState<TwoFactorAuthenticationFormDataInterface>(
       AUTH_DATA.INITIAL_DATA.TFA
     );
+  const [otpTitle, setOTPTitle] = useState("Send OTP");
 
   const handleInputChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,6 +29,17 @@ const TwoFactorAuthentication: React.FC = () => {
     e.preventDefault();
   }, []);
 
+  const handleSendOTP = (): void => {
+    if (otpTitle != "Send OTP" && otpTitle != "Resend OTP") {
+      return;
+    }
+    setOTPTitle("Sending...");
+    setTimeout(() => {
+      setOTPTitle("OTP Sent!");
+      setTimeout(() => setOTPTitle("Resend OTP"), 2000);
+    }, 1000);
+  };
+
   return (
     <AuthFormContainer formTitle="2FA" handleFormSubmit={handleFormSubmit}>
       <TextInput
@@ -41,6 +53,10 @@ const TwoFactorAuthentication: React.FC = () => {
         disabled={true}
         handleInputChange={handleInputChange}
         Icon={MdOutlineMail}
+        inputButton={{
+          title: otpTitle,
+          handleButtonClick: handleSendOTP,
+        }}
       />
       <OTPInput />
       <section className="mt-[22px]">

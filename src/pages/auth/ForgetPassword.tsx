@@ -15,6 +15,7 @@ const ForgetPassword: React.FC = () => {
   const [formData, setFormData] = useState<ForgetPasswordFormDataInterface>(
     AUTH_DATA.INITIAL_DATA.FORGET_PASSWORD
   );
+  const [otpTitle, setOTPTitle] = useState("Send OTP");
 
   const handleInputChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,6 +45,17 @@ const ForgetPassword: React.FC = () => {
     </section>
   );
 
+  const handleSendOTP = (): void => {
+    if (otpTitle != "Send OTP" && otpTitle != "Resend OTP") {
+      return;
+    }
+    setOTPTitle("Sending...");
+    setTimeout(() => {
+      setOTPTitle("OTP Sent!");
+      setTimeout(() => setOTPTitle("Resend OTP"), 2000);
+    }, 1000);
+  };
+
   return (
     <AuthFormContainer
       formTitle="forgot(pwd)"
@@ -59,6 +71,10 @@ const ForgetPassword: React.FC = () => {
         value={formData.email}
         handleInputChange={handleInputChange}
         Icon={MdOutlineMail}
+        inputButton={{
+          title: otpTitle,
+          handleButtonClick: handleSendOTP,
+        }}
       />
       <OTPInput />
       <SwitchToSignIn />

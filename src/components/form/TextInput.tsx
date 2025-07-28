@@ -12,6 +12,7 @@ const TextInput: React.FC<TextInputPropsInterface> = ({
   handleInputChange,
   Icon,
   lowercase = false,
+  inputButton,
 }) => {
   return (
     <div className="flex flex-col text-text-secondary font-medium focus-within:text-accent gap-1 transition-all ease-in-out duration-200 mb-[14px]">
@@ -19,7 +20,7 @@ const TextInput: React.FC<TextInputPropsInterface> = ({
         {label}
         {required && <span className="text-red-800">*</span>}
       </label>
-      <div className="relative">
+      <div className="relative w-full">
         <input
           type={inputType}
           id={id}
@@ -40,6 +41,14 @@ const TextInput: React.FC<TextInputPropsInterface> = ({
           size={22}
         />
       </div>
+      {inputButton && (
+        <p
+          className="self-end -mb-4 text-[15px] font-semibold hover:text-accent transition-all ease-in-out duration-200 cursor-pointer pr-1"
+          onClick={inputButton.handleButtonClick}
+        >
+          {inputButton.title}
+        </p>
+      )}
     </div>
   );
 };

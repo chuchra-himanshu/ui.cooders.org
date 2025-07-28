@@ -12,6 +12,7 @@ const EmailVerification: React.FC = () => {
   const [formData, setFormData] = useState<EmailVerificationFormDataInterface>(
     AUTH_DATA.INITIAL_DATA.EMAIL_VERIFICATION
   );
+  const [otpTitle, setOTPTitle] = useState("Send OTP");
 
   const handleInputChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,6 +27,17 @@ const EmailVerification: React.FC = () => {
   const handleFormSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   }, []);
+
+  const handleSendOTP = (): void => {
+    if (otpTitle != "Send OTP" && otpTitle != "Resend OTP") {
+      return;
+    }
+    setOTPTitle("Sending...");
+    setTimeout(() => {
+      setOTPTitle("OTP Sent!");
+      setTimeout(() => setOTPTitle("Resend OTP"), 2000);
+    }, 1000);
+  };
 
   return (
     <AuthFormContainer
@@ -42,6 +54,10 @@ const EmailVerification: React.FC = () => {
         value={formData.email}
         handleInputChange={handleInputChange}
         Icon={MdOutlineMail}
+        inputButton={{
+          title: otpTitle,
+          handleButtonClick: handleSendOTP,
+        }}
       />
       <OTPInput />
       <section className="mt-[22px]">

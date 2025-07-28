@@ -10,6 +10,10 @@ interface TextInputPropsInterface {
   handleInputChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   Icon: IconType;
   lowercase?: boolean;
+  inputButton?: {
+    title: string;
+    handleButtonClick: () => void;
+  };
 }
 
 interface PasswordInputPropsInterface {
