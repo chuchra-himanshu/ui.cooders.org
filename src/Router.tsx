@@ -16,6 +16,7 @@ import {
   AdminStudio,
   Calendar,
   ChangePassword,
+  ChooseUsername,
   Community,
   Dashboard,
   EmailVerification,
@@ -62,6 +63,7 @@ const Router: React.FC = () => {
           <Route path="change-password" Component={ChangePassword} />
           <Route path="verify-email" Component={EmailVerification} />
           <Route path="2fa" Component={TwoFactorAuthentication} />
+          <Route path="choose-username" Component={ChooseUsername} />
         </Route>
       </Routes>
     </BrowserRouter>

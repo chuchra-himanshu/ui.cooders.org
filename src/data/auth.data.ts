@@ -27,6 +27,10 @@ const INITIAL_DATA = {
     email: "",
     otp: "",
   },
+  CHOOSE_USERNAME: {
+    email: "",
+    username: "",
+  },
 };
 
 const USERNAME_VALIDATIONS = [

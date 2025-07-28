@@ -5,6 +5,7 @@ import ForgetPassword from "./auth/ForgetPassword";
 import ChangePassword from "./auth/ChangePassword";
 import EmailVerification from "./auth/EmailVerification";
 import TwoFactorAuthentication from "./auth/TwoFactorAuthentication";
+import ChooseUsername from "./auth/ChooseUsername";
 
 // DASHBAORD
 import Dashboard from "./dashboard/Dashboard";
@@ -57,4 +58,5 @@ export {
   AdminSolveX,
   AdminNotebook,
   AdminMockAPI,
+  ChooseUsername,
 };

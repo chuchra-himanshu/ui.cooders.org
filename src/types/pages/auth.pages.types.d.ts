@@ -31,3 +31,8 @@ interface TwoFactorAuthenticationFormDataInterface {
   email: string;
   otp: string;
 }
+
+interface ChooseUsernameFormDataInterface {
+  email: string;
+  username: string;
+}

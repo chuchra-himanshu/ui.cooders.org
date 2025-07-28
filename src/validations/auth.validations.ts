@@ -60,6 +60,18 @@ const CHANGE_PASSWORD_VALIDATION_SCHEMA = z
     path: ["confirmPassword"],
   });
 
+const CHOOSE_USERNAME_VALIDATION_SCHEMA = z.object({
+  email: z.email("Please enter a valid email address"),
+  username: z
+    .string()
+    .min(3, "Username must be at least 3 characters")
+    .max(30, "Username must be at most 30 characters")
+    .regex(
+      /^[a-zA-Z0-9-]+$/,
+      "Username only include letters, numbers, and hyphens"
+    ),
+});
+
 export default {
   SIGNUP_VALIDATION_SCHEMA,
   SIGNIN_VALIDATION_SCHEMA,
@@ -67,4 +79,5 @@ export default {
   EMAIL_VERIFICATION_VALIDATION_SCHEMA,
   TFA_VALIDATION_SCHEMA,
   CHANGE_PASSWORD_VALIDATION_SCHEMA,
+  CHOOSE_USERNAME_VALIDATION_SCHEMA,
 };
