@@ -73,6 +73,12 @@ const SignUp: React.FC = () => {
   const generateRandomPassword = () => {
     const randomPassword = HELPER_UTILITY.GENERATE_RANDOM_PASSWORD();
     setFormData((prev) => ({ ...prev, password: randomPassword }));
+    setPasswordValidations((prevValidations) =>
+      prevValidations.map((rule) => {
+        const isValid = rule.validate(randomPassword);
+        return { ...rule, status: isValid };
+      })
+    );
   };
 
   const SwitchToSignIn = () => (
