@@ -14,14 +14,9 @@ import { FaCheckCircle } from "react-icons/fa";
 const ChangePassword: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
 
-  const initialData: ChangePasswordFormDataInterface = {
-    email: "",
-    password: "",
-    confirmPassword: "",
-  };
-
-  const [formData, setFormData] =
-    useState<ChangePasswordFormDataInterface>(initialData);
+  const [formData, setFormData] = useState<ChangePasswordFormDataInterface>(
+    AUTH_DATA.INITIAL_DATA.CHANGE_PASSWORD
+  );
   const [passwordValidations, setPasswordValidations] = useState(
     AUTH_DATA.PASSWORD_VALIDATIONS
   );

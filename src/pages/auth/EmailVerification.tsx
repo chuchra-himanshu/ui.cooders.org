@@ -6,15 +6,12 @@ import {
   TextInput,
 } from "../../components";
 import { MdOutlineMail } from "react-icons/md";
+import { AUTH_DATA } from "../../data";
 
 const EmailVerification: React.FC = () => {
-  const initialData: EmailVerificationFormDataInterface = {
-    email: "",
-    otp: "",
-  };
-
-  const [formData, setFormData] =
-    useState<EmailVerificationFormDataInterface>(initialData);
+  const [formData, setFormData] = useState<EmailVerificationFormDataInterface>(
+    AUTH_DATA.INITIAL_DATA.EMAIL_VERIFICATION
+  );
 
   const handleInputChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {

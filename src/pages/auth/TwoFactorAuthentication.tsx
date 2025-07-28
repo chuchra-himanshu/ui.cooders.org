@@ -6,15 +6,13 @@ import {
   TextInput,
 } from "../../components";
 import { MdOutlineMail } from "react-icons/md";
+import { AUTH_DATA } from "../../data";
 
 const TwoFactorAuthentication: React.FC = () => {
-  const initialData: TwoFactorAuthenticationFormDataInterface = {
-    email: "",
-    otp: "",
-  };
-
   const [formData, setFormData] =
-    useState<TwoFactorAuthenticationFormDataInterface>(initialData);
+    useState<TwoFactorAuthenticationFormDataInterface>(
+      AUTH_DATA.INITIAL_DATA.TFA
+    );
 
   const handleInputChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {

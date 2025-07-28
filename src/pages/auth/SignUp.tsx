@@ -17,15 +17,9 @@ import { FaCheckCircle } from "react-icons/fa";
 const SignUp: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
 
-  const initialData: SignUpFormDataInterface = {
-    email: "",
-    username: "",
-    password: "",
-    rememberMe: false,
-  };
-
-  const [formData, setFormData] =
-    useState<SignUpFormDataInterface>(initialData);
+  const [formData, setFormData] = useState<SignUpFormDataInterface>(
+    AUTH_DATA.INITIAL_DATA.SIGNUP
+  );
   const [usernameValidations, setUsernameValidations] = useState(
     AUTH_DATA.USERNAME_VALIDATIONS
   );

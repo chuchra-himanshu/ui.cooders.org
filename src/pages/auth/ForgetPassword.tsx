@@ -7,17 +7,14 @@ import {
   TextInput,
 } from "../../components";
 import { MdOutlineMail } from "react-icons/md";
+import { AUTH_DATA } from "../../data";
 
 const ForgetPassword: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
 
-  const initialData: ForgetPasswordFormDataInterface = {
-    email: "",
-    otp: "",
-  };
-
-  const [formData, setFormData] =
-    useState<ForgetPasswordFormDataInterface>(initialData);
+  const [formData, setFormData] = useState<ForgetPasswordFormDataInterface>(
+    AUTH_DATA.INITIAL_DATA.FORGET_PASSWORD
+  );
 
   const handleInputChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -10,18 +10,14 @@ import {
 } from "../../components";
 import { useNavigate, type NavigateFunction } from "react-router-dom";
 import { MdDriveFileRenameOutline } from "react-icons/md";
+import { AUTH_DATA } from "../../data";
 
 const SignIn: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
 
-  const initialData: SignInFormDataInterface = {
-    username: "",
-    password: "",
-    rememberMe: false,
-  };
-
-  const [formData, setFormData] =
-    useState<SignInFormDataInterface>(initialData);
+  const [formData, setFormData] = useState<SignInFormDataInterface>(
+    AUTH_DATA.INITIAL_DATA.SIGNIN
+  );
 
   const handleCheckboxChange = useCallback(() => {
     setFormData((prev) => ({ ...prev, rememberMe: !prev.rememberMe }));

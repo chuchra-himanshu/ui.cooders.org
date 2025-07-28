@@ -1,3 +1,34 @@
+const INITIAL_DATA = {
+  SIGNUP: {
+    email: "",
+    username: "",
+    password: "",
+    rememberMe: false,
+  },
+  SIGNIN: {
+    username: "",
+    password: "",
+    rememberMe: false,
+  },
+  FORGET_PASSWORD: {
+    email: "",
+    otp: "",
+  },
+  CHANGE_PASSWORD: {
+    email: "",
+    password: "",
+    confirmPassword: "",
+  },
+  EMAIL_VERIFICATION: {
+    email: "",
+    otp: "",
+  },
+  TFA: {
+    email: "",
+    otp: "",
+  },
+};
+
 const USERNAME_VALIDATIONS = [
   {
     title: "Length 3 – 30 Characters",
@@ -50,4 +81,5 @@ const PASSWORD_VALIDATIONS = [
 export default {
   USERNAME_VALIDATIONS,
   PASSWORD_VALIDATIONS,
+  INITIAL_DATA,
 };
