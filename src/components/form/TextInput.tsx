@@ -34,7 +34,9 @@ const TextInput: React.FC<TextInputPropsInterface> = ({
           style={{
             ...(lowercase ? { textTransform: "lowercase" } : {}),
           }}
-          className="outline-none w-full rounded-[10px] px-3 py-2 pr-10 border-2 border-border-primary focus:text-text-primary focus:border-accent transition-all ease-in-out duration-200"
+          className={`outline-none w-full rounded-[10px] px-3 py-2 pr-10 border-2 border-border-primary focus:text-text-primary focus:border-accent transition-all ease-in-out duration-200 ${
+            disabled ? "cursor-not-allowed" : "cursor-text"
+          }`}
         />
         <Icon
           className="absolute top-[11px] right-3 opacity-50 text-text-secondary transition-all duration-200 ease-in-out"

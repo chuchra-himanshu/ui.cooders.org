@@ -1,8 +1,12 @@
 import React, { useCallback, useState, type FormEvent } from "react";
 import { AUTH_DATA } from "../../data";
-import { AuthFormContainer, SubmitButton, TextInput } from "../../components";
+import {
+  AuthFormContainer,
+  InputWithValidation,
+  SubmitButton,
+  TextInput,
+} from "../../components";
 import { MdDriveFileRenameOutline, MdOutlineMail } from "react-icons/md";
-import { FaCheckCircle } from "react-icons/fa";
 import { AUTH_ZOD_VALIDATIONS } from "../../validations";
 import { HELPER_UTILITY } from "../../utils";
 
@@ -63,40 +67,20 @@ const ChooseUsername: React.FC = () => {
         Icon={MdOutlineMail}
         disabled={true}
       />
-      <div className="w-full flex justify-center">
-        <div className="relative w-full max-w-md group">
-          <TextInput
-            id="signup-username"
-            inputType="text"
-            label="Username"
-            name="username"
-            value={formData.username}
-            required={true}
-            lowercase={true}
-            handleInputChange={handleInputChange}
-            Icon={MdDriveFileRenameOutline}
-          />
-          <div className="absolute top-0 left-full ml-12 w-[315px] bg-overlay-primary p-4 rounded-[10px] shadow-md hidden group-focus-within:block">
-            <section className="flex flex-col gap-1">
-              {usernameValidations?.map((item, index) => (
-                <div key={index} className="flex gap-3 items-center">
-                  <div
-                    className={`flex items-center justify-center bg-background-primary h-[30px] w-[30px] rounded-full cursor-pointer transition-all ease-in-out duration-200 ${
-                      item.status
-                        ? "hover:bg-green-400/5 text-green-400"
-                        : "hover:bg-red-400/5 text-red-400"
-                    }`}
-                  >
-                    <FaCheckCircle className="" size={18} />
-                  </div>
-                  <p className="text-text-primary text-sm">{item.title}</p>
-                </div>
-              ))}
-            </section>
-          </div>
-        </div>
-      </div>
-      <section className="mt-[10px]">
+      <InputWithValidation validations={usernameValidations}>
+        <TextInput
+          id="signup-username"
+          inputType="text"
+          label="Username"
+          name="username"
+          value={formData.username}
+          required={true}
+          lowercase={true}
+          handleInputChange={handleInputChange}
+          Icon={MdDriveFileRenameOutline}
+        />
+      </InputWithValidation>
+      <section className="mt-[22px]">
         <SubmitButton label="Submit" includeBottomMargin={false} />
       </section>
     </AuthFormContainer>

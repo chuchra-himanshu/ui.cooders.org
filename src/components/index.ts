@@ -29,6 +29,7 @@ import FormDivider from "./auth/FormDivider";
 import SocialAuth from "./auth/SocialAuth";
 import CheckboxInput from "./auth/CheckboxInput";
 import OTPInput from "./auth/OTPInput";
+import InputWithValidation from "./auth/InputWithValidation";
 
 // ADMIN
 import AdminSidebar from "./admin/AdminSidebar";
@@ -57,4 +58,5 @@ export {
   AdminSidebar,
   Dialog,
   PasswordInput,
+  InputWithValidation,
 };

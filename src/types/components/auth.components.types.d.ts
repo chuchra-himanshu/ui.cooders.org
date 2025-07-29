@@ -19,3 +19,8 @@ interface SubmitButtonPropsInterface {
   label: string;
   includeBottomMargin?: boolean;
 }
+
+interface InputWithValidationPropsInterface {
+  children: ReactNode;
+  validations: any[];
+}
