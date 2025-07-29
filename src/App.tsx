@@ -7,7 +7,7 @@ import { Toaster } from "sonner";
 const App: React.FC = () => {
   return (
     <Provider store={store}>
-      <Toaster richColors />
+      <Toaster richColors theme="dark" />
       <Router />
     </Provider>
   );
