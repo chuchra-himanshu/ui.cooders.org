@@ -14,6 +14,8 @@ import { HELPER_UTILITY } from "../../utils";
 import { MdDriveFileRenameOutline, MdOutlineMail } from "react-icons/md";
 import { AUTH_DATA } from "../../data";
 import { AUTH_ZOD_VALIDATIONS } from "../../validations";
+import { AUTH_LOCAL_SERVICES } from "../../redux";
+import { toast } from "sonner";
 
 const SignUp: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
@@ -27,6 +29,8 @@ const SignUp: React.FC = () => {
   const [passwordValidations, setPasswordValidations] = useState(
     AUTH_DATA.PASSWORD_VALIDATIONS
   );
+  const { useSignupMutation } = AUTH_LOCAL_SERVICES;
+  const [signupDispatch] = useSignupMutation();
 
   const handleCheckboxChange = useCallback(() => {
     setFormData((prev) => ({ ...prev, rememberMe: !prev.rememberMe }));
@@ -65,12 +69,22 @@ const SignUp: React.FC = () => {
     async (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       const { SIGNUP_VALIDATION_SCHEMA } = AUTH_ZOD_VALIDATIONS;
-      const data = HELPER_UTILITY.VALIDATE_DATA(
+      const data = await HELPER_UTILITY.VALIDATE_DATA(
         formData,
         SIGNUP_VALIDATION_SCHEMA
       );
 
       if (!data) return;
+
+      try {
+        const response = await signupDispatch({ apiData: data }).unwrap();
+        setFormData(AUTH_DATA.INITIAL_DATA.SIGNUP);
+        toast.success(response.message);
+      } catch (error: any) {
+        toast.error(
+          error?.data?.message || "Something went wrong, Sign up failed!"
+        );
+      }
     },
     [formData]
   );

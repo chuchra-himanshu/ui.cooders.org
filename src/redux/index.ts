@@ -20,26 +20,24 @@ import {
   useVerifyTFATokenMutation,
 } from "./auth/token.auth.service";
 
-export default {
-  AUTH_LOCAL_SERVICES: {
-    useSignupMutation,
-    useSigninMutation,
-    useLazySignoutQuery,
-    useForgetPasswordMutation,
-    useChangePasswordMutation,
-    useChangeUsernameMutation,
-  },
-  AUTH_SOCIAL_SERVICES: {
-    useLazyGoogleOAuthQuery,
-    useLazyGithubOAuthQuery,
-    useLazyLinkedInOAuthQuery,
-  },
-  AUTH_TOKEN_SERVICES: {
-    useLazyGenerateForgetPasswordTokenQuery,
-    useVerifyForgetPasswordTokenMutation,
-    useLazyGenerateEmailVerificationTokenQuery,
-    useVerifyEmailVerificationTokenMutation,
-    useLazyGenerateTFATokenQuery,
-    useVerifyTFATokenMutation,
-  },
+export const AUTH_LOCAL_SERVICES = {
+  useSignupMutation,
+  useSigninMutation,
+  useLazySignoutQuery,
+  useForgetPasswordMutation,
+  useChangePasswordMutation,
+  useChangeUsernameMutation,
+};
+export const AUTH_SOCIAL_SERVICES = {
+  useLazyGoogleOAuthQuery,
+  useLazyGithubOAuthQuery,
+  useLazyLinkedInOAuthQuery,
+};
+export const AUTH_TOKEN_SERVICES = {
+  useLazyGenerateForgetPasswordTokenQuery,
+  useVerifyForgetPasswordTokenMutation,
+  useLazyGenerateEmailVerificationTokenQuery,
+  useVerifyEmailVerificationTokenMutation,
+  useLazyGenerateTFATokenQuery,
+  useVerifyTFATokenMutation,
 };

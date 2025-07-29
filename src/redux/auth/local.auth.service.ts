@@ -4,7 +4,13 @@ const API_URI = `${import.meta.env.VITE_API_AUTH}/local`;
 
 export const localAuthService = createApi({
   reducerPath: "local_auth",
-  baseQuery: fetchBaseQuery({ baseUrl: API_URI }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: API_URI,
+    prepareHeaders: (headers) => {
+      headers.set("Content-Type", "application/json");
+      return headers;
+    },
+  }),
   endpoints: (builder) => ({
     signup: builder.mutation({
       query: ({ apiData }) => ({
