@@ -11,6 +11,8 @@ import {
 import { useNavigate, type NavigateFunction } from "react-router-dom";
 import { MdDriveFileRenameOutline } from "react-icons/md";
 import { AUTH_DATA } from "../../data";
+import { AUTH_ZOD_VALIDATIONS } from "../../validations";
+import { HELPER_UTILITY } from "../../utils";
 
 const SignIn: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
@@ -35,6 +37,13 @@ const SignIn: React.FC = () => {
 
   const handleFormSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const { SIGNIN_VALIDATION_SCHEMA } = AUTH_ZOD_VALIDATIONS;
+    const data = HELPER_UTILITY.VALIDATE_DATA(
+      formData,
+      SIGNIN_VALIDATION_SCHEMA
+    );
+
+    if (!data) return;
   }, []);
 
   const SwitchToSignUp = () => (

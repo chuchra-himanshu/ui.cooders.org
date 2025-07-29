@@ -3,6 +3,8 @@ import { AUTH_DATA } from "../../data";
 import { AuthFormContainer, SubmitButton, TextInput } from "../../components";
 import { MdDriveFileRenameOutline, MdOutlineMail } from "react-icons/md";
 import { FaCheckCircle } from "react-icons/fa";
+import { AUTH_ZOD_VALIDATIONS } from "../../validations";
+import { HELPER_UTILITY } from "../../utils";
 
 const ChooseUsername: React.FC = () => {
   const [formData, setFormData] = useState<ChooseUsernameFormDataInterface>(
@@ -35,6 +37,13 @@ const ChooseUsername: React.FC = () => {
 
   const handleFormSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const { CHOOSE_USERNAME_VALIDATION_SCHEMA } = AUTH_ZOD_VALIDATIONS;
+    const data = HELPER_UTILITY.VALIDATE_DATA(
+      formData,
+      CHOOSE_USERNAME_VALIDATION_SCHEMA
+    );
+
+    if (!data) return;
   }, []);
 
   return (

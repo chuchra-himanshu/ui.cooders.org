@@ -10,6 +10,7 @@ import { MdOutlineMail } from "react-icons/md";
 import { AUTH_DATA } from "../../data";
 import { HELPER_UTILITY } from "../../utils";
 import { FaCheckCircle } from "react-icons/fa";
+import { AUTH_ZOD_VALIDATIONS } from "../../validations";
 
 const ChangePassword: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
@@ -41,6 +42,13 @@ const ChangePassword: React.FC = () => {
 
   const handleFormSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const { CHANGE_PASSWORD_VALIDATION_SCHEMA } = AUTH_ZOD_VALIDATIONS;
+    const data = HELPER_UTILITY.VALIDATE_DATA(
+      formData,
+      CHANGE_PASSWORD_VALIDATION_SCHEMA
+    );
+
+    if (!data) return;
   }, []);
 
   const generateRandomPassword = () => {

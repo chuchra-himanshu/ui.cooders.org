@@ -8,6 +8,8 @@ import {
 } from "../../components";
 import { MdOutlineMail } from "react-icons/md";
 import { AUTH_DATA } from "../../data";
+import { AUTH_ZOD_VALIDATIONS } from "../../validations";
+import { HELPER_UTILITY } from "../../utils";
 
 const ForgetPassword: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
@@ -29,6 +31,13 @@ const ForgetPassword: React.FC = () => {
 
   const handleFormSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const { FORGET_PASSWORD_VALIDATION_SCHEMA } = AUTH_ZOD_VALIDATIONS;
+    const data = HELPER_UTILITY.VALIDATE_DATA(
+      formData,
+      FORGET_PASSWORD_VALIDATION_SCHEMA
+    );
+
+    if (!data) return;
   }, []);
 
   const SwitchToSignIn = () => (

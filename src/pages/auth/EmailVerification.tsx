@@ -7,6 +7,8 @@ import {
 } from "../../components";
 import { MdOutlineMail } from "react-icons/md";
 import { AUTH_DATA } from "../../data";
+import { AUTH_ZOD_VALIDATIONS } from "../../validations";
+import { HELPER_UTILITY } from "../../utils";
 
 const EmailVerification: React.FC = () => {
   const [formData, setFormData] = useState<EmailVerificationFormDataInterface>(
@@ -26,6 +28,13 @@ const EmailVerification: React.FC = () => {
 
   const handleFormSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const { EMAIL_VERIFICATION_VALIDATION_SCHEMA } = AUTH_ZOD_VALIDATIONS;
+    const data = HELPER_UTILITY.VALIDATE_DATA(
+      formData,
+      EMAIL_VERIFICATION_VALIDATION_SCHEMA
+    );
+
+    if (!data) return;
   }, []);
 
   const handleSendOTP = (): void => {
