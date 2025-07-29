@@ -1,3 +1,6 @@
+import type { ZodObject } from "zod";
+import { toast } from "sonner";
+
 function GENERATE_RANDOM_PASSWORD(length = 12) {
   if (length < 8 || length > 60) {
     throw new Error("Password length must be between 8 and 60 characters.");
@@ -28,6 +31,19 @@ function GENERATE_RANDOM_PASSWORD(length = 12) {
   return password.join("");
 }
 
+async function VALIDATE_DATA(data: any, schema: ZodObject) {
+  const validationResult = await schema.safeParse(data);
+  if (validationResult.success !== true) {
+    toast.error(
+      JSON.parse(validationResult.error?.message || "")?.[0]?.message
+    );
+    return;
+  }
+
+  return validationResult.data;
+}
+
 export default {
   GENERATE_RANDOM_PASSWORD,
+  VALIDATE_DATA,
 };

@@ -13,6 +13,7 @@ import { HELPER_UTILITY } from "../../utils";
 import { MdDriveFileRenameOutline, MdOutlineMail } from "react-icons/md";
 import { AUTH_DATA } from "../../data";
 import { FaCheckCircle } from "react-icons/fa";
+import { AUTH_ZOD_VALIDATIONS } from "../../validations";
 
 const SignUp: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
@@ -60,9 +61,19 @@ const SignUp: React.FC = () => {
     []
   );
 
-  const handleFormSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  }, []);
+  const handleFormSubmit = useCallback(
+    async (e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      const { SIGNUP_VALIDATION_SCHEMA } = AUTH_ZOD_VALIDATIONS;
+      const data = HELPER_UTILITY.VALIDATE_DATA(
+        formData,
+        SIGNUP_VALIDATION_SCHEMA
+      );
+
+      if (!data) return;
+    },
+    [formData]
+  );
 
   const generateRandomPassword = () => {
     const randomPassword = HELPER_UTILITY.GENERATE_RANDOM_PASSWORD();

@@ -9,7 +9,10 @@ const SIGNUP_VALIDATION_SCHEMA = z.object({
     .regex(
       /^[a-zA-Z0-9-]+$/,
       "Username only include letters, numbers, and hyphens"
-    ),
+    )
+    .refine((val) => /[a-zA-Z0-9]/.test(val), {
+      message: "Username cannot consist of only hyphens",
+    }),
   password: z
     .string()
     .min(8, "Password must be at least 8 characters")
