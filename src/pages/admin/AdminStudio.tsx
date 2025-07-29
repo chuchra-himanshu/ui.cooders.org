@@ -37,7 +37,7 @@ const AdminStudio: React.FC = () => {
         </button>
       </header>
 
-      {toggleDialog && (
+      {/* {toggleDialog && (
         <Dialog heading="Create Prop" handleDialogClose={handleDialogClose}>
           <form>
             <TextInput
@@ -46,6 +46,9 @@ const AdminStudio: React.FC = () => {
               placeholder="Prop Name"
               inputType="text"
               required={true}
+              name="dsabd"
+              value="kjdn"
+              Icon="dmbdj"
             />
             <TextInput
               id="prop-default-value"
@@ -53,6 +56,9 @@ const AdminStudio: React.FC = () => {
               placeholder="Enter Default Value (If any)"
               inputType="text"
               required={false}
+              name="dsabd"
+              value="kjdn"
+              Icon="dmbdj"
             />
             <TextInput
               id="prop-input-type"
@@ -60,6 +66,94 @@ const AdminStudio: React.FC = () => {
               placeholder="Choose from Simple Icons"
               inputType="text"
               required={true}
+              name="dsabd"
+              value="kjdn"
+              Icon="dmbdj"
+            />
+
+            <div className="flex justify-end mt-5">
+              <button
+                type="submit"
+                className="cursor-pointer font-medium outline-none rounded-[10px] text-text-secondary px-3 pt-[7px] pb-[9px] border-2 border-border-primary hover:text-text-primary hover:border-accent transition-all ease-in-out duration-200"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </Dialog>
+      )} */}
+      {/* 
+      {toggleDialog && (
+        <Dialog
+          heading="Create Component"
+          handleDialogClose={handleDialogClose}
+        >
+          <form>
+            <TextInput
+              id="library-title"
+              label="Title"
+              placeholder="Library Name"
+              inputType="text"
+              required={true}
+              name="dsabd"
+              value="kjdn"
+              Icon="dmbdj"
+            />
+            <TextInput
+              id="library-logo"
+              label="Logo"
+              placeholder="Choose from Simple Icons"
+              inputType="text"
+              name="dsabd"
+              value="kjdn"
+              Icon="dmbdj"
+              required={true}
+            />
+
+            <div className="flex justify-end mt-5">
+              <button
+                type="submit"
+                className="cursor-pointer font-medium outline-none rounded-[10px] text-text-secondary px-3 pt-[7px] pb-[9px] border-2 border-border-primary hover:text-text-primary hover:border-accent transition-all ease-in-out duration-200"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </Dialog>
+      )} */}
+
+      {toggleDialog && (
+        <Dialog heading="Create Library" handleDialogClose={handleDialogClose}>
+          <form>
+            <TextInput
+              id="library-title"
+              label="Title"
+              placeholder="Library Name"
+              inputType="text"
+              required={true}
+              name="dsabd"
+              value="kjdn"
+              Icon="dmbdj"
+            />
+            <TextInput
+              id="library-url"
+              label="URL"
+              placeholder="Library Official URL"
+              inputType="text"
+              required={true}
+              name="dsabd"
+              value="kjdn"
+              Icon="dmbdj"
+            />
+            <TextInput
+              id="library-logo"
+              label="Logo"
+              placeholder="Choose from Simple Icons"
+              inputType="text"
+              required={true}
+              name="dsabd"
+              value="kjdn"
+              Icon="dmbdj"
             />
 
             <div className="flex justify-end mt-5">
@@ -73,76 +167,6 @@ const AdminStudio: React.FC = () => {
           </form>
         </Dialog>
       )}
-
-      {/* {toggleDialog && (
-        <Dialog
-          heading="Create Component"
-          handleDialogClose={handleDialogClose}
-        >
-          <form>
-            <TextInput
-              id="library-title"
-              label="Title"
-              placeholder="Library Name"
-              inputType="text"
-              required={true}
-            />
-            <TextInput
-              id="library-logo"
-              label="Logo"
-              placeholder="Choose from Simple Icons"
-              inputType="text"
-              required={true}
-            />
-
-            <div className="flex justify-end mt-5">
-              <button
-                type="submit"
-                className="cursor-pointer font-medium outline-none rounded-[10px] text-text-secondary px-3 pt-[7px] pb-[9px] border-2 border-border-primary hover:text-text-primary hover:border-accent transition-all ease-in-out duration-200"
-              >
-                Submit
-              </button>
-            </div>
-          </form>
-        </Dialog>
-      )} */}
-
-      {/* {toggleDialog && (
-        <Dialog heading="Create Library" handleDialogClose={handleDialogClose}>
-          <form>
-            <TextInput
-              id="library-title"
-              label="Title"
-              placeholder="Library Name"
-              inputType="text"
-              required={true}
-            />
-            <TextInput
-              id="library-url"
-              label="URL"
-              placeholder="Library Official URL"
-              inputType="text"
-              required={true}
-            />
-            <TextInput
-              id="library-logo"
-              label="Logo"
-              placeholder="Choose from Simple Icons"
-              inputType="text"
-              required={true}
-            />
-
-            <div className="flex justify-end mt-5">
-              <button
-                type="submit"
-                className="cursor-pointer font-medium outline-none rounded-[10px] text-text-secondary px-3 pt-[7px] pb-[9px] border-2 border-border-primary hover:text-text-primary hover:border-accent transition-all ease-in-out duration-200"
-              >
-                Submit
-              </button>
-            </div>
-          </form>
-        </Dialog>
-      )} */}
     </section>
   );
 };

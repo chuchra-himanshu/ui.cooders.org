@@ -24,6 +24,7 @@ const StudioSidebar: React.FC = () => {
 
   const handleSelectLibrary = (title: string) => {
     setSelectedLibrary(title);
+    setSelectedPanelIndex(1);
   };
 
   const handleSelectComponent = (title: string) => {
@@ -51,7 +52,10 @@ const StudioSidebar: React.FC = () => {
 
   return (
     <Sidebar>
-      <SidebarHeader handleIconButtonClick={handleIconButtonClick} />
+      <SidebarHeader
+        handleIconButtonClick={handleIconButtonClick}
+        selectedPanelIndex={selectedPanelIndex}
+      />
       {panelComponents[selectedPanelIndex]}
     </Sidebar>
   );
