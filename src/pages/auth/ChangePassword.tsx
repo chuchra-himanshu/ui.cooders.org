@@ -11,6 +11,8 @@ import { MdOutlineMail } from "react-icons/md";
 import { AUTH_DATA } from "../../data";
 import { HELPER_UTILITY } from "../../utils";
 import { AUTH_ZOD_VALIDATIONS } from "../../validations";
+import { AUTH_LOCAL_SERVICES } from "../../redux";
+import { toast } from "sonner";
 
 const ChangePassword: React.FC = () => {
   const navigate: NavigateFunction = useNavigate();
@@ -21,6 +23,8 @@ const ChangePassword: React.FC = () => {
   const [passwordValidations, setPasswordValidations] = useState(
     AUTH_DATA.PASSWORD_VALIDATIONS
   );
+  const [forgetPasswordDispatch] =
+    AUTH_LOCAL_SERVICES.useForgetPasswordMutation();
 
   const handleInputChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -40,16 +44,32 @@ const ChangePassword: React.FC = () => {
     []
   );
 
-  const handleFormSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const { CHANGE_PASSWORD_VALIDATION_SCHEMA } = AUTH_ZOD_VALIDATIONS;
-    const data = HELPER_UTILITY.VALIDATE_DATA(
-      formData,
-      CHANGE_PASSWORD_VALIDATION_SCHEMA
-    );
+  const handleFormSubmit = useCallback(
+    async (e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      const { CHANGE_PASSWORD_VALIDATION_SCHEMA } = AUTH_ZOD_VALIDATIONS;
+      const data = HELPER_UTILITY.VALIDATE_DATA(
+        formData,
+        CHANGE_PASSWORD_VALIDATION_SCHEMA
+      );
 
-    if (!data) return;
-  }, []);
+      if (!data) return;
+
+      try {
+        const response = await forgetPasswordDispatch({
+          apiData: data,
+        }).unwrap();
+        setFormData(AUTH_DATA.INITIAL_DATA.CHANGE_PASSWORD);
+        toast.success(response.message);
+      } catch (error: any) {
+        toast.error(
+          error?.data?.message ||
+            "Something went wrong, password update failed!"
+        );
+      }
+    },
+    [formData]
+  );
 
   const generateRandomPassword = () => {
     const randomPassword = HELPER_UTILITY.GENERATE_RANDOM_PASSWORD();

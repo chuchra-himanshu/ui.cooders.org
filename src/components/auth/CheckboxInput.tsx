@@ -12,7 +12,7 @@ const CheckboxInput: React.FC<CheckboxInputPropsInterface> = ({
       <button
         type="button"
         onClick={handleCheckboxClick}
-        className={`h-[19px] w-[19px] border-2 rounded-[4px] flex items-center justify-center transition-all duration-200 ${
+        className={`h-[19px] w-[19px] outline-none focus:border-accent border-2 rounded-[4px] flex items-center justify-center transition-all duration-200 ${
           checkboxClickStatus
             ? "bg-accent border-accent"
             : "border-border-primary hover:border-accent"
